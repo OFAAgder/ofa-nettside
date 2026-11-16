@@ -1,0 +1,165 @@
+/* OFA nettside - grunnstil (utkast, farger kan endres) */
+
+:root {
+  --bg: #faf7f2;
+  --text: #1c1c1c;
+  --accent: #6b7a4f;
+  --accent-dark: #4f5c3a;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--bg);
+  border-bottom: 1px solid #e0dcd3;
+  padding: 1rem 1.5rem;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent-dark);
+  font-weight: bold;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-image-placeholder {
+  background-color: #e8e3d8;
+  color: #8a8477;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  background-color: var(--accent-dark);
+}
+
+h1, h2, h3 {
+  color: var(--text);
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #e0dcd3;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+form {
+  max-width: 500px;
+  margin-top: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+footer {
+  border-top: 1px solid #e0dcd3;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6a675e;
+}

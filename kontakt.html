@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Opplæringskontoret for FBIE i Agder</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">OFA</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="om-ofa.html">Om OFA</a></li>
+          <li><a href="fagene-vare.html">Fagene våre</a></li>
+          <li><a href="for-laerebedrifter.html">For lærebedrifter</a></li>
+          <li><a href="for-laerlinger.html">For lærlinger og foresatte</a></li>
+          <li><a href="aktuelt.html">Aktuelt</a></li>
+          <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>Kontakt oss</h1>
+      <p>Har du spørsmål om læreplass, lærlinger eller samarbeid? Fyll ut skjemaet under, så svarer vi deg så snart vi kan.</p>
+    </section>
+
+    <section>
+      <!--
+        Merk: dette skjemaet sender ikke e-post ennå.
+        Statiske nettsider (som denne) kan ikke behandle skjema-innsending selv.
+        Før siden går live må vi koble skjemaet til en tjeneste som Formspree,
+        eller bruke en e-postlenke som midlertidig løsning.
+      -->
+      <form id="kontaktskjema">
+        <label for="navn">Navn</label>
+        <input type="text" id="navn" name="navn" required>
+
+        <label for="epost">E-post</label>
+        <input type="email" id="epost" name="epost" required>
+
+        <label for="melding">Melding</label>
+        <textarea id="melding" name="melding" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send melding</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Andre kontaktopplysninger</h2>
+      <p>E-post: [postadresse kommer her]<br>
+      Telefon: [telefonnummer kommer her]<br>
+      Adresse: [adresse kommer her]</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Opplæringskontoret for FBIE i Agder &middot; <a href="kontakt.html">Kontakt oss</a></p>
+  </footer>
+
+</body>
+</html>
