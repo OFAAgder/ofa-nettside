@@ -1,2 +1,9 @@
 *.docx
 .DS_Store
+
+# Full oppløsning rå-bilder fra fotograf holdes lokalt, kun web-optimaliserte versjoner (-web.jpg) i Git
+images/*-kopi.jpeg
+images/ansatte-gruppe.jpeg
+images/ansatt-annelene.jpeg
+images/ansatt-tonje.jpeg
+images/ansatte-moro-harklipp.jpeg

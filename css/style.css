@@ -86,6 +86,27 @@ main {
   margin: 0 auto 1.5rem;
 }
 
+.about-photo {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card {
+  text-align: center;
+}
+
+.contact-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center 12%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
 .hero-image-placeholder {
   background-color: #e8e3d8;
   color: #8a8477;
@@ -118,6 +139,15 @@ h1, h2, h3 {
 
 section {
   margin-bottom: 2.5rem;
+}
+
+.fag-section {
+  border-bottom: 1px solid #e0dcd3;
+  padding-bottom: 2rem;
+}
+
+.fag-section:last-of-type {
+  border-bottom: none;
 }
 
 .card-grid {
