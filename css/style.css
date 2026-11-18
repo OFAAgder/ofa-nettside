@@ -20,6 +20,21 @@ body {
   line-height: 1.6;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 0.75rem 1.25rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
 header {
   background-color: var(--bg);
   border-bottom: 1px solid #e0dcd3;
@@ -37,10 +52,14 @@ header {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: var(--text);
+  display: block;
   text-decoration: none;
+}
+
+.logo-img {
+  display: block;
+  height: 2.5rem;
+  width: auto;
 }
 
 nav ul {
@@ -64,6 +83,18 @@ nav a.active {
   font-weight: bold;
 }
 
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.header-cta-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
 main {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -76,8 +107,19 @@ main {
 }
 
 .hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.hero-logo {
+  display: block;
+  width: min(480px, 85vw);
+  height: auto;
+  margin: 0 auto 3.5rem;
+}
+
+.hero-cta {
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
 .hero p {
@@ -91,7 +133,7 @@ main {
   width: 100%;
   border-radius: 8px;
   display: block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .contact-card {
@@ -104,7 +146,19 @@ main {
   object-fit: cover;
   object-position: center 12%;
   border-radius: 50%;
+  margin-bottom: 0.4rem;
+}
+
+.photo-credit {
+  font-size: 0.75rem;
+  color: rgba(28, 28, 28, 0.5);
+  margin-top: -0.5rem;
   margin-bottom: 1rem;
+}
+
+.about-photo + .photo-credit {
+  max-width: 420px;
+  text-align: right;
 }
 
 .hero-image-placeholder {
@@ -164,6 +218,27 @@ section {
   padding: 1.5rem;
 }
 
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #e0dcd3;
+}
+
+th {
+  font-weight: bold;
+}
+
 form {
   max-width: 500px;
   margin-top: 1.5rem;
@@ -188,8 +263,65 @@ form textarea {
 
 footer {
   border-top: 1px solid #e0dcd3;
-  padding: 1.5rem;
-  text-align: center;
+  padding: 2.5rem 1.5rem 1.5rem;
   font-size: 0.85rem;
   color: #6a675e;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: left;
+}
+
+.footer-col h2 {
+  font-size: 0.95rem;
+  margin: 0 0 0.7rem;
+}
+
+.footer-logo {
+  display: block;
+  height: 3.2rem;
+  width: auto;
+}
+
+.footer-col p {
+  margin: 0 0 0.5rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.footer-col a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.footer-col a:hover {
+  color: var(--text);
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-top: 1px solid #e0dcd3;
+  padding-top: 1.2rem;
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+  color: var(--text);
 }
