@@ -245,31 +245,31 @@ section {
   border-bottom: none;
 }
 
-.anchor-links {
+.snarveier {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
 }
 
-.timeline {
+.tidslinje {
   list-style: none;
-  counter-reset: timeline-step;
+  counter-reset: tidslinje-steg;
   margin: 1.5rem 0;
   padding: 0;
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
-.timeline li {
+.tidslinje > li {
   position: relative;
   padding-left: 2.75rem;
   min-height: 2.2rem;
 }
 
-.timeline li::before {
-  counter-increment: timeline-step;
-  content: counter(timeline-step);
+.tidslinje > li::before {
+  counter-increment: tidslinje-steg;
+  content: counter(tidslinje-steg);
   position: absolute;
   left: 0;
   top: 0;
@@ -286,13 +286,49 @@ section {
   justify-content: center;
 }
 
-.timeline-step {
+.tidslinje-steg {
   display: block;
   font-weight: bold;
   margin-bottom: 0.2rem;
 }
 
-.timeline p {
+.tidslinje p {
+  margin: 0;
+}
+
+.tidslinje ul {
+  list-style: none;
+  margin: 0.75rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tidslinje ul li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.tidslinje ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.kontaktboks {
+  border-left: 3px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kontaktboks p {
   margin: 0;
 }
 
