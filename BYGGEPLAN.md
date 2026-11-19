@@ -37,7 +37,8 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 5. "Kontakt oss" – Kontaktboks (type 9)
 6. Avsluttende kryss-lenke (til for-laerebedrifter.html) – Tekstseksjon (type 10)
 
-### 6. aktuelt.html
+### 6. aktuelt.html (flyttet til egen branch, ikke i main)
+Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken. Strukturen i seg selv er uendret og ligger slik på branchen `aktuelt`:
 1. H1 + intro – Sidetopp – underside (type 2)
 2. "Siste nytt" – Tekstkort (type 4)
 3. Instagram-avsnitt – Tekstseksjon (type 10) — se merknad under "Aktuelt-siden": teksten er i strid med den nye regelen om sosiale medier.
@@ -141,20 +142,21 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - Løsning: i stedet for å innføre en ny gråtone, gjenbrukes den eksisterende `#6a675e` (fra footer-teksten, målt 5,38:1 mot `--bg`) som ny CSS-variabel `--muted-text` i `:root`. Både `.photo-credit` og `footer` bruker nå `color: var(--muted-text);`.
 - Ingen andre farger er rørt.
 
-## Aktuelt-siden (samlet)
+## Aktuelt-siden (samlet, gjennomført – flyttet til egen branch)
 
-- Tas med i denne runden, men kun det strukturelle: nyhetskortene standardiseres som tekstkort (type 4), og plassholderteksten rettes til `[Plassholder: ...]`-format.
-- Selve nyhetsinnholdet (overskrifter, tekst, datoer) er ikke klart ennå og skrives ikke nå – det fylles inn når det er bestemt, uavhengig av lansering. Strukturen er klar til å ta imot innholdet når den tid kommer.
-- **Lanseringsbetingelse:** Aktuelt skal bare finnes på den publiserte nettsiden dersom den har minst to ekte, publiserte saker. Inntil da er siden *skjult* – det betyr at **aktuelt.html ikke publiseres/pushes til den live siden i det hele tatt**, ikke bare at menylenkene (header-nav og footer-sidelenker, alle 8 sider) fjernes. Når minst to saker er klare, publiseres filen og lenkene legges tilbake samtidig på alle 8 sider.
-- **Merknad – konflikt med ny regel:** Aktuelt.html sin nåværende plassholdertekst ("her kan vi senere vise innhold fra Instagram-kontoen til OFA") er i strid med den nye regelen om at sosiale medier kun skal lenkes til, aldri innebygges. Formuleringen må rettes (f.eks. til en ren lenke til OFAs Instagram) når innholdet skrives.
+- aktuelt.html er tatt ut av `main` (`git rm`) og ligger nå kun på en egen branch kalt `aktuelt`, opprettet fra `main` før filen ble fjernet. Menylenkene (header-nav og footer-sidelenker) til Aktuelt er fjernet på alle 7 gjenværende sider.
+- **Hvorfor en branch, ikke bare fjerning:** siden GitHub Pages bygger hele `main` ved push, er dette den eneste måten å garantere at siden ikke er nåbar på sin direkte URL før den skal være det – å bare fjerne menylenkene er ikke nok (se "Lansering" under).
+- **Ved lansering:** når lanseringsbetingelsen er oppfylt (minst to ekte, publiserte saker – skrives inn på `aktuelt`-branchen når innholdet er klart, uavhengig av når selve lanseringen skjer), flettes `aktuelt`-branchen inn i `main` igjen, og menylenkene legges tilbake på alle 8 sider, i samme push.
+- Strukturen i seg selv er uendret og klar til å ta imot innholdet når den tid kommer (se "Sider" → aktuelt.html).
+- **Merknad – konflikt med ny regel:** Aktuelt.html sin plassholdertekst på `aktuelt`-branchen ("her kan vi senere vise innhold fra Instagram-kontoen til OFA") er i strid med den nye regelen om at sosiale medier kun skal lenkes til, aldri innebygges. Formuleringen må rettes (f.eks. til en ren lenke til OFAs Instagram) når innholdet skrives, før branchen flettes inn.
 
 ## Lansering – noindex og publiseringsmekanikk
 
 - Alle 8 sider har fått `<meta name="robots" content="noindex, nofollow">` i `<head>`, og det er lagt til en `robots.txt` ved prosjektroten som disallower alt (`Disallow: /`). Dette hindrer søkemotorer i å indeksere siden mens den er under arbeid.
 - **Fjernes ved lansering:** `noindex`-taggen på alle 8 sider og `robots.txt` må fjernes/oppdateres idet siden lanseres for alvor – ellers forblir siden usynlig i søk permanent.
 - **Viktig forbehold:** `noindex`/`robots.txt` hindrer kun *ny* indeksering fra søkemotorer. De gjør ikke siden utilgjengelig for noen som har den direkte URL-en, og fjerner ikke allerede indeksert innhold retroaktivt.
-- **Aktuelt.html og "push = publisering":** GitHub Pages bygger hele `main`-branchen ved hver push, så det er ikke mulig å pushe resten av nettsiden uten at aktuelt.html blir med, med mindre filen (og nav-/footer-lenkene til den) fysisk er fjernet fra det som pushes. Mekanismen fremover: hold selve innholdsarbeidet på aktuelt.html utenfor det som pushes til `main` (egen branch, eller usendt lokalt) til lanseringsbetingelsen (minst to ekte saker) er oppfylt. Å bare fjerne menylenkene holder ikke – siden er fortsatt nåbar på sin direkte URL så lenge filen ligger i det som er pushet.
-- **Funn som krever avklaring:** aktuelt.html har vært en del av `main`-branchen – og dermed trolig allerede live på https://ofaagder.github.io/ofa-nettside/aktuelt.html – siden lenge før denne byggeplanen, med plassholderinnhold. Lanseringsbetingelsen er etter alt å dømme allerede brutt på den live siden akkurat nå, uavhengig av dagens `noindex`-tillegg (som først trer i kraft ved neste push). Avventer brukerens avgjørelse: ta affære med en egen push som fjerner siden nå, eller la det stå til neste ordinære push.
+- **Aktuelt.html og "push = publisering" (gjennomført):** GitHub Pages bygger hele `main`-branchen ved hver push, så det er ikke mulig å pushe resten av nettsiden uten at aktuelt.html blir med, med mindre filen (og nav-/footer-lenkene til den) fysisk er fjernet fra det som pushes. Løsningen: aktuelt.html er flyttet til en egen branch (`aktuelt`), fjernet fra `main`, og menylenkene er fjernet på alle 7 gjenværende sider. Se "Aktuelt-siden" for detaljer om fletting ved lansering.
+- **Tidligere funn, nå løst ved neste push:** aktuelt.html hadde vært en del av `main`-branchen – og dermed trolig allerede live på https://ofaagder.github.io/ofa-nettside/aktuelt.html – siden lenge før denne byggeplanen, med plassholderinnhold. Når denne rundens commits pushes, forsvinner filen fra den live siden (git rm blir med i pushen), og lanseringsbetingelsen er dermed ivaretatt.
 
 ## Avstand og størrelse – observasjoner til punkt 5
 
@@ -181,5 +183,5 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 7. Plassholder/SJEKK-opprydding (aktuelt.html, personvern.html, kontakt.html, footer).
 8. Teknisk rydding (dødt CSS, skriftvekt i tidslinje, navn på `.fag-section`).
 9. WebP-konvertering.
-10. Rett før lansering: sjekk om Aktuelt har minst to ekte saker. Publiser filen og menylenken sammen hvis ja; hold begge tilbake hvis nei.
+10. Rett før lansering: sjekk om `aktuelt`-branchen har minst to ekte saker. Hvis ja: flett branchen inn i `main` og legg menylenkene tilbake på alle 8 sider, i samme push. Hvis nei: la branchen stå urørt og ikke flett den inn ennå.
 11. Ved selve lanseringen: fjern `noindex`-taggen fra alle 8 sider og oppdater `robots.txt`, samtidig som punkt 10 sjekkes – de to bør gjøres i samme push.
