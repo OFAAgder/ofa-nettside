@@ -237,6 +237,10 @@ section {
   margin-bottom: 2.5rem;
 }
 
+.sidetopp {
+  /* Reservert for felles avstands-/skriftstørrelsesskala, se BYGGEPLAN.md punkt 5 i rekkefølgen. */
+}
+
 .fag-section {
   border-bottom: 1px solid #e0dcd3;
   padding-bottom: 2rem;

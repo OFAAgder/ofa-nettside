@@ -43,8 +43,9 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 3. Instagram-avsnitt – Tekstseksjon (type 10) — se merknad under "Aktuelt-siden": teksten er i strid med den nye regelen om sosiale medier.
 
 ### 7. kontakt.html
-1. H1 + "Kontaktpersoner" – Sidetopp – underside (type 2) + Personkort (type 6)
-2. "Ta kontakt" – Kontaktboks (type 9) + Tekstseksjon (advarselstekst)
+1. H1 + intro – Sidetopp – underside (type 2)
+2. "Kontaktpersoner" – Personkort (type 6)
+3. "Ta kontakt" – Kontaktboks (type 9) + Tekstseksjon (advarselstekst)
 
 ### 8. personvern.html
 1. H1 + ingress – Sidetopp – underside (type 2)
@@ -71,10 +72,14 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - Brukes: index.html.
 - Endring: ingen. Blir stående som egen variant kun for forsiden.
 
-### 2. Sidetopp – underside (ny klasse, forslag: `.sidetopp`)
-- Brukes i dag som ustylet `<section><h1>+intro>` uten egen klasse på: om-ofa, fagene-vare, for-laerebedrifter, for-laerlinger, aktuelt, kontakt, personvern.
-- Endring: samle mønsteret i én ny CSS-klasse og legg den på den første `<section>` på alle 7 undersider. `.snarveier` kan fortsatt ligge inni denne seksjonen der den finnes (de to lærer-sidene) – det er en egen, valgfri komponent, ikke en egen toppvariant.
+### 2. Sidetopp – underside (`.sidetopp`, gjennomført)
+- Brukes nå på den første `<section>` på alle 7 undersider: om-ofa, fagene-vare, for-laerebedrifter, for-laerlinger, aktuelt, kontakt, personvern. `.snarveier` ligger fortsatt inni denne seksjonen der den finnes (de to lærer-sidene) – egen, valgfri komponent, ikke en egen toppvariant.
 - Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`), brukt i dag kun på om-ofa.html.
+- CSS-regelen `.sidetopp` er foreløpig tom (ingen visuell endring nå) – reservert for avstands-/skriftstørrelsesskalaen i punkt 5.
+- **To sider krevde reell oppdeling av `<section>`**, ikke bare et klassenavn, siden sidetopp-innholdet lå sammen med neste seksjon i samme tag:
+  - **om-ofa.html**: H1+bilde+bildetekst skilt ut fra "OFA – Opplæringskontor..."-avsnittet (nå egen tekstseksjon).
+  - **kontakt.html**: H1 skilt ut fra "Kontaktpersoner"-personkortene (nå egen seksjon), og fikk en ny plassholder-ingress: `[Plassholder: Kort setning om hvordan man tar kontakt]`.
+  - **Synlig avstandsendring som følge av oppdelingen (målt, ikke rettet nå – tas i punkt 5):** på om-ofa.html økte gapet mellom bildeteksten og "OFA – Opplæringskontor..."-overskriften fra ca. 20px til 40px. På kontakt.html er gapet mellom den nye plassholder-ingressen og "Kontaktpersoner"-overskriften tilsvarende 40px (mot et direkte H1→H2-gap på ca. 21px før oppdelingen, som nå i tillegg har fått en synlig tekstlinje mellom seg).
 
 ### 3. Fag-seksjon (`.fag-section`)
 - Brukes: fagene-vare, for-laerebedrifter, for-laerlinger.
