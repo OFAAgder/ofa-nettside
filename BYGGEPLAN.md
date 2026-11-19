@@ -146,6 +146,11 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - **Lanseringsbetingelse:** Aktuelt skal bare finnes på den publiserte nettsiden dersom den har minst to ekte, publiserte saker. Inntil da er siden *skjult* – det betyr at **aktuelt.html ikke publiseres/pushes til den live siden i det hele tatt**, ikke bare at menylenkene (header-nav og footer-sidelenker, alle 8 sider) fjernes. Når minst to saker er klare, publiseres filen og lenkene legges tilbake samtidig på alle 8 sider.
 - **Merknad – konflikt med ny regel:** Aktuelt.html sin nåværende plassholdertekst ("her kan vi senere vise innhold fra Instagram-kontoen til OFA") er i strid med den nye regelen om at sosiale medier kun skal lenkes til, aldri innebygges. Formuleringen må rettes (f.eks. til en ren lenke til OFAs Instagram) når innholdet skrives.
 
+## Avstand og størrelse – observasjoner til punkt 5
+
+- om-ofa.html: gapet mellom bildeteksten (`.photo-credit`) og den påfølgende h2 ("OFA – Opplæringskontor...") økte fra ca. 20px til 40px da sidetopp-seksjonen ble delt ut.
+- kontakt.html: gapet mellom den nye ingressen i sidetoppen og "Kontaktpersoner"-overskriften er 40px.
+
 ## Gjenstår (teknisk rydding, egen runde)
 
 - Fjern dødt CSS: `.hero-image-placeholder` (style.css, linje 209–219) og all `form`/`form label`/`form input, textarea`-styling (linje 371–391) – ingen HTML-fil bruker lenger disse.
