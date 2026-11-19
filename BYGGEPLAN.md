@@ -12,7 +12,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 1. H1 + bilde + bildetekst – Sidetopp – underside (type 2)
 2. "OFA – Opplæringskontor for FBIE i Agder" – Tekstseksjon (type 10)
 3. "Hva gjør vi?" – Tekstkort (type 4)
-4. "Vi samarbeider med" – Tekstkort (type 4)
+4. "Vi samarbeider med" – Tekstseksjon (type 10)
 
 ### 3. fagene-vare.html
 1. H1 + intro – Sidetopp – underside (type 2)
@@ -86,7 +86,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - Endring: ingen strukturell endring – allerede én versjon. Fungerer som ramme rundt andre seksjonstyper (tekstseksjon, tekstkort, tidslinje). Navnet vurderes på nytt, se "Gjenstår".
 
 ### 4. Tekstkort (navngitt `.card-grid`/`.card`-variant)
-- Brukes: om-ofa, for-laerebedrifter, for-laerlinger, aktuelt (tas med nå).
+- Brukes: om-ofa ("Hva gjør vi?"), for-laerebedrifter, for-laerlinger, aktuelt (tas med nå).
 - Endring: ingen markup-endring nødvendig. Gi varianten et offisielt navn i kodekommentar/dokumentasjon slik at den ikke blandes sammen med lenkekort eller personkort senere.
 
 ### 5. Lenkekort
@@ -110,7 +110,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - Endring: kontakt.html sin "Ta gjerne direkte kontakt"-seksjon bygges om til `.kontaktboks` (telefon + e-post-knapp i ramme). Advarselsteksten om sensitive opplysninger beholdes som eget avsnitt (tekstseksjon) rett under/utenfor boksen.
 
 ### 10. Tekstseksjon (h2 + avsnitt/liste)
-- Brukes: personvern.html (alle avsnitt), fagene-vare.html (fagtekstene), for-laerebedrifter.html ("Andre muligheter", "Hva koster det?"), for-laerlinger.html ("Andre veier" m.fl.), avsluttende kryss-lenker på lærer-sidene, m.fl.
+- Brukes: personvern.html (alle avsnitt), fagene-vare.html (fagtekstene), for-laerebedrifter.html ("Andre muligheter", "Hva koster det?"), for-laerlinger.html ("Andre veier" m.fl.), avsluttende kryss-lenker på lærer-sidene, om-ofa.html ("OFA – Opplæringskontor...", "Vi samarbeider med"), m.fl.
 - Endring: ingen strukturell endring – gi den et offisielt navn (Tekstseksjon) slik at den ikke forveksles med Sidetopp eller andre typer ved fremtidig arbeid.
 
 ## Footer – sosiale medier (nytt)
