@@ -127,10 +127,12 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
   - Adresse (Kartheia 5) der den forekommer
   - Lenke-adressene til Instagram/Facebook i footer
 
-## Kontrastfiks – `.photo-credit`
+## Kontrastfiks – `.photo-credit` (gjennomført)
 
-- Mål: minst 4,5:1 mot `--bg` (#FBF9F5). Dagens `rgba(44,34,30,0.68)` gir ca. 3,25–3,6:1.
-- Gjøres isolert: gjør fargen mørkere/mindre transparent til kontrastkravet er oppfylt, uten å røre `--accent`, `--accent-dark`, `--bg` eller `--text` (fargepaletten for øvrig er fortsatt ikke endelig valgt).
+- `.photo-credit` står alltid på vanlig side-/kortbakgrunn (`--bg`, #FBF9F5), rett under bildet – aldri oppå selve bildet.
+- Den tidligere vurderingen (~3,25–3,6:1) gjaldt en eldre fargeverdi (`rgba(28,28,28,0.5)`, satt under WCAG-revisjonen 2026-11-18) som senere ble endret til `rgba(44,34,30,0.68)` i en urelatert commit samme dag, uten at kontrasten ble regnet på nytt. Reelt målt kontrast for den nyere verdien var 5,29:1 – allerede over AA-kravet.
+- Løsning: i stedet for å innføre en ny gråtone, gjenbrukes den eksisterende `#6a675e` (fra footer-teksten, målt 5,38:1 mot `--bg`) som ny CSS-variabel `--muted-text` i `:root`. Både `.photo-credit` og `footer` bruker nå `color: var(--muted-text);`.
+- Ingen andre farger er rørt.
 
 ## Aktuelt-siden (samlet)
 
@@ -142,7 +144,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 ## Gjenstår (teknisk rydding, egen runde)
 
 - Fjern dødt CSS: `.hero-image-placeholder` (style.css, linje 209–219) og all `form`/`form label`/`form input, textarea`-styling (linje 371–391) – ingen HTML-fil bruker lenger disse.
-- Gjør gråtonene (`#6a675e`, `#e0dcd3`) om til CSS-variabler (f.eks. `--border`, `--muted-text`) i stedet for 4 hardkodede forekomster.
+- `#6a675e` er nå samlet i `--muted-text` (se Kontrastfiks over). Gjør `#e0dcd3` (border-fargen, 5 hardkodede forekomster) om til en tilsvarende CSS-variabel (f.eks. `--border`).
 - Rett skriftvekt i `.tidslinje-steg` slik at den bruker samme font (Poppins) som resten av de fete elementene i komponenten, eller dokumenter bevisst hvorfor den skal bruke brødtekstfonten.
 - Konverter bilder til WebP (krav i PROSJEKTBRIEF.md, ikke oppfylt i dag – bildene er komprimert JPG).
 - Vurder nytt navn på `.fag-section`, siden den i praksis brukes som en generell rammeseksjon (ikke bare for "fag"-sider) rundt flere seksjonstyper (tekstseksjon, tekstkort, tidslinje).
