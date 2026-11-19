@@ -58,6 +58,9 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 7. Lærlinger og lærebedrifter – Tekstseksjon (type 10)
 8. Sist oppdatert – Tekstseksjon (type 10)
 
+### 9. 404.html (ny, gjennomført)
+1. H1 "Siden finnes ikke" + forklarende tekst + to knapper (Til forsiden, Kontakt oss) – Sidetopp – underside (type 2) + Snarveier (type 7)
+
 ## Beslutninger lagt til grunn
 
 1. To topptyper: forsidetopp (`.hero`) og en ny klasse for sidetopp på undersidene.
@@ -152,8 +155,11 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ## Lansering – noindex og publiseringsmekanikk
 
+- **404.html (gjennomført):** egen feilside i OFAs utseende ("Siden finnes ikke" + lenker til forsiden og kontaktsiden), lagt i prosjektroten. GitHub Pages viser denne automatisk for alle ugyldige adresser, i stedet for GitHubs standard enhjørning-side. Bruker samme relative lenker (`css/style.css`, `index.html` osv.) som resten av sidene, for konsistens med resten av prosjektet.
+  - **Kjent begrensning:** relative lenker i `404.html` løses av nettleseren ut fra adressen som faktisk ble forsøkt besøkt, ikke ut fra hvor filen ligger. For feilsider på toppnivå (f.eks. en gammel lenke til `aktuelt.html`, eller en feilstavet sidenavn) fungerer dette likt som på alle andre sider i prosjektet. For en adresse med ekstra mapper i stien (f.eks. `/ofa-nettside/noe/som-ikke-finnes/`) vil lenkene og stilarket kunne brytes, selv om selve teksten "Siden finnes ikke" fortsatt vises. Vurder absolutte stier senere dersom dette blir et reelt problem – men ikke før endelig domene er valgt, siden en sti som `/ofa-nettside/...` uansett må endres ved overgang til eget domene (se under).
+
 - Alle 8 sider har fått `<meta name="robots" content="noindex, nofollow">` i `<head>`, og det er lagt til en `robots.txt` ved prosjektroten som disallower alt (`Disallow: /`). Dette hindrer søkemotorer i å indeksere siden mens den er under arbeid.
-- **Fjernes ved lansering:** `noindex`-taggen på alle 8 sider og `robots.txt` må fjernes/oppdateres idet siden lanseres for alvor – ellers forblir siden usynlig i søk permanent.
+- **Fjernes ved lansering:** `noindex`-taggen på de 7 innholdssidene og `robots.txt` må fjernes/oppdateres idet siden lanseres for alvor – ellers forblir siden usynlig i søk permanent. **Unntak:** `noindex` på `404.html` skal *stå* for alltid, også etter lansering – det er vanlig praksis for feilsider, og hindrer at feilsiden selv dukker opp som treff i søk.
 - **Viktig forbehold:** `noindex`/`robots.txt` hindrer kun *ny* indeksering fra søkemotorer. De gjør ikke siden utilgjengelig for noen som har den direkte URL-en, og fjerner ikke allerede indeksert innhold retroaktivt.
 - **Aktuelt.html og "push = publisering" (gjennomført):** GitHub Pages bygger hele `main`-branchen ved hver push, så det er ikke mulig å pushe resten av nettsiden uten at aktuelt.html blir med, med mindre filen (og nav-/footer-lenkene til den) fysisk er fjernet fra det som pushes. Løsningen: aktuelt.html er flyttet til en egen branch (`aktuelt`), fjernet fra `main`, og menylenkene er fjernet på alle 7 gjenværende sider. Se "Aktuelt-siden" for detaljer om fletting ved lansering.
 - **Tidligere funn, nå løst (gjennomført):** aktuelt.html hadde vært en del av `main`-branchen – og dermed trolig allerede live på https://ofaagder.github.io/ofa-nettside/aktuelt.html – siden lenge før denne byggeplanen, med plassholderinnhold. Fjerningen er pushet, og filen er ikke lenger en del av den live siden.
