@@ -93,9 +93,9 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - Brukes: kun index.html (3 kort med "Les mer →").
 - Endring: ingen konsolidering nødvendig, men gi den et eget navn/modifikator-klasse så den ikke glir sammen med tekstkort senere.
 
-### 6. Personkort
-- Brukes: kontakt.html (med telefon i dag) og for-laerlinger.html sin kontaktperson-rad (uten telefon i dag).
-- Endring: legg til telefonnummer i for-laerlinger.html sine to personkort (Anne Lene Gabrielsen 902 27 388, Tonje Skomedal Ramse 911 41 299), slik at personkort alltid viser bilde + navn + rolle + telefon.
+### 6. Personkort (gjennomført)
+- Brukes: kontakt.html og for-laerlinger.html sin kontaktperson-rad. Begge viser nå bilde + navn + rolle + telefon.
+- Telefonnumre: Anne Lene Gabrielsen 902 27 388, Tonje Skomedal Ramse 911 41 299 – begge som klikkbare `tel:+47...`-lenker, bekreftet av bruker, ingen SJEKK-merking.
 
 ### 7. Snarveier (`.snarveier`)
 - Brukes: for-laerebedrifter, for-laerlinger.
@@ -105,14 +105,15 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - Brukes: for-laerebedrifter, for-laerlinger.
 - Endring: ingen strukturell endring her. Skriftvekt-spørsmålet i `.tidslinje-steg` ligger under "Gjenstår".
 
-### 9. Kontaktboks (`.kontaktboks`)
-- Brukes i dag: for-laerebedrifter, for-laerlinger.
-- Endring: kontakt.html sin "Ta gjerne direkte kontakt"-seksjon bygges om til `.kontaktboks` (telefon + e-post-knapp i ramme). Advarselsteksten om sensitive opplysninger beholdes som eget avsnitt (tekstseksjon) rett under/utenfor boksen.
+### 9. Kontaktboks (`.kontaktboks`, gjennomført)
+- Brukes: for-laerebedrifter, for-laerlinger, kontakt.html. kontakt.html sin "Ta gjerne direkte kontakt"-seksjon er bygget om til `.kontaktboks` (telefon + e-post-knapp i ramme), med advarselsteksten om sensitive opplysninger stående som eget avsnitt rett utenfor boksen.
+- Alle tre instansene bruker nå telefonnummeret som en klikkbar `tel:+4793490216`-lenke (internasjonalt format), ikke bare ren tekst.
 
 ### 10. Tekstseksjon (h2 + avsnitt/liste)
 - Brukes: personvern.html (alle avsnitt), fagene-vare.html (fagtekstene), for-laerebedrifter.html ("Andre muligheter", "Hva koster det?"), for-laerlinger.html ("Andre veier" m.fl.), avsluttende kryss-lenker på lærer-sidene, om-ofa.html ("OFA – Opplæringskontor...", "Vi samarbeider med"), m.fl.
 - Endring: ingen strukturell endring – gi den et offisielt navn (Tekstseksjon) slik at den ikke forveksles med Sidetopp eller andre typer ved fremtidig arbeid.
 - **Kulepunktstil (gjennomført):** vanlige `<ul>`-lister inni `<main>` (tidligere kun stylet inni `.tidslinje`) bruker nå samme lille, terrakotta-fargede kulepunkt overalt – `main ul` i style.css. Gjelder bl.a. "Vi samarbeider med" (om-ofa.html), "Søk læreplass" (for-laerlinger.html) og "E-post og telefon" (personvern.html).
+- **Liste-semantikk for skjermlesere (gjennomført):** alle fire `<ul>`-elementene i `<main>` (om-ofa.html, for-laerlinger.html, for-laerebedrifter.html, personvern.html) har fått `role="list"`. Årsak: `list-style: none` er kjent for å fjerne liste-semantikken i VoiceOver/Safari (ikke i Chrome/NVDA/JAWS) med mindre rollen settes eksplisitt. Ikke testet med ekte VoiceOver, kun bekreftet via Chromiums eget tilgjengelighetstre. Gjelder foreløpig kun lister i `<main>` – `nav ul` og `.footer-col ul` har samme `list-style: none` og samme teoretiske risiko, men er bevisst holdt utenfor denne runden.
 
 ## Footer – sosiale medier (nytt)
 
@@ -147,6 +148,14 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 - **Lanseringsbetingelse:** Aktuelt skal bare finnes på den publiserte nettsiden dersom den har minst to ekte, publiserte saker. Inntil da er siden *skjult* – det betyr at **aktuelt.html ikke publiseres/pushes til den live siden i det hele tatt**, ikke bare at menylenkene (header-nav og footer-sidelenker, alle 8 sider) fjernes. Når minst to saker er klare, publiseres filen og lenkene legges tilbake samtidig på alle 8 sider.
 - **Merknad – konflikt med ny regel:** Aktuelt.html sin nåværende plassholdertekst ("her kan vi senere vise innhold fra Instagram-kontoen til OFA") er i strid med den nye regelen om at sosiale medier kun skal lenkes til, aldri innebygges. Formuleringen må rettes (f.eks. til en ren lenke til OFAs Instagram) når innholdet skrives.
 
+## Lansering – noindex og publiseringsmekanikk
+
+- Alle 8 sider har fått `<meta name="robots" content="noindex, nofollow">` i `<head>`, og det er lagt til en `robots.txt` ved prosjektroten som disallower alt (`Disallow: /`). Dette hindrer søkemotorer i å indeksere siden mens den er under arbeid.
+- **Fjernes ved lansering:** `noindex`-taggen på alle 8 sider og `robots.txt` må fjernes/oppdateres idet siden lanseres for alvor – ellers forblir siden usynlig i søk permanent.
+- **Viktig forbehold:** `noindex`/`robots.txt` hindrer kun *ny* indeksering fra søkemotorer. De gjør ikke siden utilgjengelig for noen som har den direkte URL-en, og fjerner ikke allerede indeksert innhold retroaktivt.
+- **Aktuelt.html og "push = publisering":** GitHub Pages bygger hele `main`-branchen ved hver push, så det er ikke mulig å pushe resten av nettsiden uten at aktuelt.html blir med, med mindre filen (og nav-/footer-lenkene til den) fysisk er fjernet fra det som pushes. Mekanismen fremover: hold selve innholdsarbeidet på aktuelt.html utenfor det som pushes til `main` (egen branch, eller usendt lokalt) til lanseringsbetingelsen (minst to ekte saker) er oppfylt. Å bare fjerne menylenkene holder ikke – siden er fortsatt nåbar på sin direkte URL så lenge filen ligger i det som er pushet.
+- **Funn som krever avklaring:** aktuelt.html har vært en del av `main`-branchen – og dermed trolig allerede live på https://ofaagder.github.io/ofa-nettside/aktuelt.html – siden lenge før denne byggeplanen, med plassholderinnhold. Lanseringsbetingelsen er etter alt å dømme allerede brutt på den live siden akkurat nå, uavhengig av dagens `noindex`-tillegg (som først trer i kraft ved neste push). Avventer brukerens avgjørelse: ta affære med en egen push som fjerner siden nå, eller la det stå til neste ordinære push.
+
 ## Avstand og størrelse – observasjoner til punkt 5
 
 - om-ofa.html: gapet mellom bildeteksten (`.photo-credit`) og den påfølgende h2 ("OFA – Opplæringskontor...") økte fra ca. 20px til 40px da sidetopp-seksjonen ble delt ut.
@@ -173,3 +182,4 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 8. Teknisk rydding (dødt CSS, skriftvekt i tidslinje, navn på `.fag-section`).
 9. WebP-konvertering.
 10. Rett før lansering: sjekk om Aktuelt har minst to ekte saker. Publiser filen og menylenken sammen hvis ja; hold begge tilbake hvis nei.
+11. Ved selve lanseringen: fjern `noindex`-taggen fra alle 8 sider og oppdater `robots.txt`, samtidig som punkt 10 sjekkes – de to bør gjøres i samme push.
