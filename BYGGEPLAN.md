@@ -132,11 +132,6 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Personvern.html får et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5, og "Aktuelt-siden" for sammenhengen): det skal stå at nettsiden lenker til OFAs kontoer på Instagram og Facebook, at ingen opplysninger sendes dit før besøkeren selv klikker, og at Metas vilkår gjelder der.
 - Footerens kontaktspalte ("Kontakt") har i tillegg fått en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
 
-## Header – Fagbrev.io-lenke (gjennomført)
-
-- Logoikonet ved siden av "Fagbrev.io" i toppmenyen har fått `alt="Fagbrev.io"` på alle 8 sider (var `alt=""`).
-- **Merk – mulig tilgjengelighetskonflikt:** CLAUDE.md sier at rent dekorative bilder (ikoner med tekst ved siden av) skal ha `alt=""`, nettopp for å unngå at skjermlesere leser opp samme tekst to ganger. Her følger lenken nå ikonet med `alt="Fagbrev.io"` rett etterfulgt av den synlige teksten "Fagbrev.io", så en skjermleser vil kunne lese "Fagbrev.io Fagbrev.io" for denne ene lenken. Endret på eksplisitt instruks – vurder å sette `alt=""` tilbake dersom dette oppleves som et problem.
-
 ## Plassholder- og SJEKK-konvensjon (gjelder alle sider)
 
 - All plassholdertekst skal skrives `[Plassholder: ...]`. Aktuelt.html sin avvikende notasjon ("[Overskrift på nyhet]", "[Kort tekst om nyheten. Dato kommer her.]") rettes til samme format.
