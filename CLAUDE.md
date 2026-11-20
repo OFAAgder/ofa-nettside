@@ -36,5 +36,6 @@ Nettsiden skal følge WCAG 2.1 nivå AA. Dette gjelder alt arbeid fremover, ikke
 - Ikke fjern standard fokusmarkering (`outline`) uten å erstatte med en tydelig alternativ fokusstil.
 - Lenker skal skilles fra vanlig tekst med mer enn bare farge (f.eks. understreking), og aktiv side i menyen skal markeres med mer enn bare farge (f.eks. også fet skrift).
 - Lenker som åpnes i ny fane (`target="_blank"`) skal ha en skjult tekst for skjermlesere som sier det, f.eks. `<span class="visually-hidden"> (åpnes i ny fane)</span>` rett før `</a>`.
+- Hvit tekst skal alltid stå på `--accent-dark`, aldri på `--accent` (gir 5,1:1 mot 3,6:1 – `--accent` alene er for lys til hvit tekst). Samme regel som i profilgrunnlaget.
 
 **Status og gjenstående arbeid:** se Gjenstår i BYGGEPLAN.md.

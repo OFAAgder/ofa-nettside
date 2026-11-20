@@ -188,6 +188,23 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Løsning: i stedet for å innføre en ny gråtone, gjenbrukes den eksisterende `#6a675e` (fra footer-teksten, målt 5,38:1 mot `--bg`) som ny CSS-variabel `--muted-text` i `:root`. Både `.photo-credit` og `footer` bruker nå `color: var(--muted-text);`.
 - Ingen andre farger er rørt.
 
+## Kontrastsjekk – knapper og flere elementer (gjennomført)
+
+Full gjennomgang av alle farge-/bakgrunnskombinasjoner i style.css (regnet ut WCAG-kontrastforhold for hver `color`-deklarasjon mot sin faktiske bakgrunn). Fire kombinasjoner var under kravet (4,5:1 normal tekst / 3:1 stor/fet tekst):
+
+1. **`.btn` og `.btn-ghost:hover`:** hvit tekst på `--accent` (#C86D51) = 3,64:1. Rettet: `.btn` sin standardbakgrunn er nå `--accent-dark` (#A8573F, 5,12:1). `.btn:hover` bruker nå `--accent-dark` → `var(--text)` (nesten svart, 14,7:1) som hover-mørkning, siden `--accent-dark` nå er standardfargen. `.btn-ghost:hover` sin bakgrunn er nå `--accent-dark` i stedet for `--accent` (matcher nå `.btn` sin standardfarge).
+2. **`.hero-image-placeholder`:** tekstfarge `#8a8477` på `#e8e3d8` = 2,91:1. Rettet: tekstfargen er nå `var(--text)` (12,1:1). Gjelder de tre plassholderbildene på fagene-vare.html (midlertidig innhold, se Gjenstår/LANSERING.md).
+3. **Vanlig lenkefarge (`--accent-dark`) inni `.fremhevet-innhold`:** på `#e0dcd3`-bakgrunnen der ble det 3,74:1 (mot 4,87:1 på vanlig sidebakgrunn, som fortsatt gjelder ellers). Gjaldt i dag kun "Fagbrev.io"-lenken i kortet på for-laerlinger.html sin "Dette får du som lærling hos oss". Rettet med en avgrenset regel: `.fremhevet-innhold a:not(.btn):not(.btn-ghost) { color: var(--text); }` (11,3:1) – `:not()`-delen er bevisst, slik at regelen ikke også ville truffet en eventuell fremtidig `.btn`/`.btn-ghost`-knapp plassert i en fremhevet-seksjon (som ellers ville fått mørk tekst på mørk bakgrunn ved hover, ca. 3,0:1 – en ny feil). Lenken er fortsatt skilt fra brødtekst med understreking (standard lenkestil), som er nok etter WCAG siden farge ikke er eneste kjennetegn.
+4. **`.stegmodell-etikett` ("Mål") på `.stegmodell-steg--mal`:** `--muted-text` på `#e0dcd3` = 4,13:1. Rettet med en avgrenset regel: `.stegmodell-steg--mal .stegmodell-etikett { color: var(--text); }` (11,3:1). Gjelder kun "Mål"-steget i stegmodellen (for-laerlinger.html og fagene-vare.html) – de tre andre stegene står på vanlig sidebakgrunn og er upåvirket.
+
+**Tatt med etter brukers vurdering (opprinnelig valgfritt punkt):** `.tidslinje > li::before` (den runde tallsirkelen, for-laerebedrifter.html sin "Bli lærebedrift"-tidslinje) besto allerede (3,64:1), men kun fordi tallet er stort og fett (20px fet = "stor tekst" i WCAG, krever da bare 3:1, ikke 4,5:1). Bakgrunnen er nå endret til `var(--accent-dark)` likevel, slik at den ikke lenger er avhengig av dette unntaket, og for å være konsekvent med knappene.
+
+**Ny fast regel (lagt i CLAUDE.md under Tilgjengelighet):** hvit tekst skal alltid stå på `--accent-dark`, aldri på `--accent` – `--accent` alene er for lys til hvit tekst (3,6:1), uansett hvor den brukes senere.
+
+**Fortsatt i orden, ingen endring:**
+- Vanlig lenkefarge (`--accent-dark`) på normal sidebakgrunn (`--bg`): 4,87:1 – består, men med relativt liten margin. Ikke endret, siden den allerede er over kravet og brukes svært mange steder; nevnes her slik at fremtidige mørkere bakgrunner bak lenketekst sjekkes på samme måte som punkt 3 og 4 over.
+- All brødtekst, overskrifter, `--muted-text` på vanlig bakgrunn (5,38:1), navigasjon, tabelltekst, footer-tekst/-lenker og korttekst – alt dette var allerede godt over kravet.
+
 ## Aktuelt-siden (samlet, gjennomført – flyttet til egen branch)
 
 - aktuelt.html er tatt ut av `main` (`git rm`) og ligger nå kun på en egen branch kalt `aktuelt`, opprettet fra `main` før filen ble fjernet. Menylenkene (header-nav og footer-sidelenker) til Aktuelt er fjernet på alle 7 gjenværende sider.
