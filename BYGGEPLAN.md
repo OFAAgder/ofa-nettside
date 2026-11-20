@@ -9,7 +9,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 2. "Våre tjenester" – Lenkekort (type 5) + CTA-knapp
 
 ### 2. om-ofa.html
-1. H1 + bildeplassholder (lokalene, bilde kommer senere) + Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) – Sidetopp – underside (type 2)
+1. H1 + bilde av lokalene (`images/ofa-lokaler-web.jpg`) + Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) – Sidetopp – underside (type 2)
 2. Innledning (kort, uten egen overskrift, kun tre avsnitt) – Tekstseksjon (type 10)
 3. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene) + lenke til kontaktsiden
 4. "Hva gjør vi?" – Tekstkort (type 4)
@@ -81,7 +81,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ### 2. Sidetopp – underside (`.sidetopp`, gjennomført)
 - Brukes nå på den første `<section>` på alle 7 undersider: om-ofa, fagene-vare, for-laerebedrifter, for-laerlinger, aktuelt, kontakt, personvern. `.snarveier` ligger fortsatt inni denne seksjonen der den finnes (de to lærer-sidene) – egen, valgfri komponent, ikke en egen toppvariant.
-- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`) – flyttet på om-ofa.html fra sidetoppen til "Hvem møter du?". Sidetoppen på om-ofa.html bruker nå i stedet en bildeplassholder (`.hero-image-placeholder`, gjenbrukt – se Gjenstår) i påvente av et bilde av lokalene.
+- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`) – flyttet på om-ofa.html fra sidetoppen til "Hvem møter du?". Sidetoppen på om-ofa.html bruker nå i stedet et ekte bilde av lokalene (`.lokaler-foto`, ny klasse: fullbredde, ingen fast høyde – i motsetning til den midlertidige `.hero-image-placeholder`-boksen den erstattet). Ingen fotokreditering lagt til – ukjent om det er aktuelt for dette bildet.
 - CSS-regelen `.sidetopp` er foreløpig tom (ingen visuell endring nå) – reservert for avstands-/skriftstørrelsesskalaen i punkt 5.
 - **To sider krevde reell oppdeling av `<section>`**, ikke bare et klassenavn, siden sidetopp-innholdet lå sammen med neste seksjon i samme tag:
   - **om-ofa.html**: H1+bilde+bildetekst skilt ut fra "OFA – Opplæringskontor..."-avsnittet (nå egen tekstseksjon).
@@ -184,7 +184,8 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ## Gjenstår (teknisk rydding, egen runde)
 
-- Fjern dødt CSS: all `form`/`form label`/`form input, textarea`-styling (linje 371–391) – ingen HTML-fil bruker lenger disse. (`.hero-image-placeholder` er nå tatt i bruk igjen på om-ofa.html, se "Sider".)
+- Fjern dødt CSS: all `form`/`form label`/`form input, textarea`-styling, og `.hero-image-placeholder` (brukes ikke lenger – om-ofa.html har fått et ekte bilde av lokalene i stedet, se "Sider").
+- Bildet `images/ofa-lokaler-web.jpg` er konvertert fra et HEIC-råbilde (`images/OFA LOKALER_1360.HEIC`, 5712×4284) til JPEG og skalert til 1400 px bredde med macOS-verktøyet `sips`, siden verken WebP-konverteringsverktøy (`cwebp`, `ffmpeg`) eller Homebrew var tilgjengelig på maskinen. Bør konverteres til WebP sammen med resten av bildene når det gjøres (se punktet om WebP-konvertering under).
 - `#6a675e` er nå samlet i `--muted-text` (se Kontrastfiks over). Gjør `#e0dcd3` (border-/bakgrunnsfargen, 7 hardkodede forekomster per nå) om til en tilsvarende CSS-variabel (f.eks. `--border`).
 - Rett skriftvekt i `.tidslinje-steg` slik at den bruker samme font (Poppins) som resten av de fete elementene i komponenten, eller dokumenter bevisst hvorfor den skal bruke brødtekstfonten.
 - Konverter bilder til WebP (krav i PROSJEKTBRIEF.md, ikke oppfylt i dag – bildene er komprimert JPG).

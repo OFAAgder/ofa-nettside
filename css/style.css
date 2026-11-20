@@ -207,6 +207,14 @@ main {
   text-align: right;
 }
 
+.lokaler-foto {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
 .hero-image-placeholder {
   background-color: #e8e3d8;
   color: #8a8477;
