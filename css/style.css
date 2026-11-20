@@ -216,6 +216,10 @@ main {
   border-radius: 8px;
   display: block;
   margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.lokaler-foto + .photo-credit {
   margin-bottom: 2.5rem;
 }
 
@@ -258,19 +262,15 @@ main {
 
 @media (min-width: 700px) {
   .om-topp-grid {
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 1fr 180px;
     grid-template-areas:
-      "skilt tekst"
+      "tekst skilt"
       "knapper knapper";
     column-gap: 2rem;
   }
 
   .om-topp-grid .snarveier {
     margin-top: 1.5rem;
-  }
-
-  .skilt-foto {
-    max-width: 220px;
   }
 }
 
