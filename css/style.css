@@ -383,7 +383,9 @@ main figure {
 .kontaktboks p,
 .tidslinje p,
 .stegmodell-steg p,
-.photo-credit {
+.stegmodell-kategori,
+.photo-credit,
+.hero-cta {
   max-width: none;
 }
 
