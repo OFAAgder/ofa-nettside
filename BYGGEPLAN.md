@@ -185,7 +185,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 ## Gjenstår (teknisk rydding, egen runde)
 
 - Fjern dødt CSS: all `form`/`form label`/`form input, textarea`-styling, og `.hero-image-placeholder` (brukes ikke lenger – om-ofa.html har fått et ekte bilde av lokalene i stedet, se "Sider").
-- Bildet `images/ofa-lokaler-web.jpg` er konvertert fra et HEIC-råbilde (`images/OFA LOKALER_1360.HEIC`, 5712×4284) til JPEG og skalert til 1400 px bredde med macOS-verktøyet `sips`, siden verken WebP-konverteringsverktøy (`cwebp`, `ffmpeg`) eller Homebrew var tilgjengelig på maskinen. Bør konverteres til WebP sammen med resten av bildene når det gjøres (se punktet om WebP-konvertering under).
+- Bildet `images/ofa-lokaler-web.jpg` er konvertert fra et HEIC-råbilde (`images/OFA LOKALER_1360.HEIC`, 5712×4284, brukerens eget bilde – ingen fotokreditering) til JPEG med macOS-verktøyet `sips`, siden verken WebP-konverteringsverktøy (`cwebp`, `ffmpeg`) eller Homebrew var tilgjengelig på maskinen. Croppet sentrert til 16:9 og skalert til 1400×787 px. Bør konverteres til WebP sammen med resten av bildene når det gjøres (se punktet om WebP-konvertering under).
 - `#6a675e` er nå samlet i `--muted-text` (se Kontrastfiks over). Gjør `#e0dcd3` (border-/bakgrunnsfargen, 7 hardkodede forekomster per nå) om til en tilsvarende CSS-variabel (f.eks. `--border`).
 - Rett skriftvekt i `.tidslinje-steg` slik at den bruker samme font (Poppins) som resten av de fete elementene i komponenten, eller dokumenter bevisst hvorfor den skal bruke brødtekstfonten.
 - Konverter bilder til WebP (krav i PROSJEKTBRIEF.md, ikke oppfylt i dag – bildene er komprimert JPG).
