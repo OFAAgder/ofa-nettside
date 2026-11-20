@@ -9,10 +9,11 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 2. "Våre tjenester" – Lenkekort (type 5) + CTA-knapp
 
 ### 2. om-ofa.html
-1. H1 + bilde + bildetekst – Sidetopp – underside (type 2)
-2. "OFA – Opplæringskontor for FBIE i Agder" – Tekstseksjon (type 10)
-3. "Hva gjør vi?" – Tekstkort (type 4)
-4. "Vi samarbeider med" – Tekstseksjon (type 10)
+1. H1 + bildeplassholder (lokalene, bilde kommer senere) + Snarveier (type 7, 4 knapper) – Sidetopp – underside (type 2)
+2. Brødtekst om OFA (historikk, uten egen overskrift) – Tekstseksjon (type 10)
+3. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene) + lenke til kontaktsiden
+4. "Hva gjør vi?" – Tekstkort (type 4)
+5. "Vi samarbeider med" – Tekstseksjon (type 10)
 
 ### 3. fagene-vare.html
 1. H1 + intro – Sidetopp – underside (type 2)
@@ -79,7 +80,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ### 2. Sidetopp – underside (`.sidetopp`, gjennomført)
 - Brukes nå på den første `<section>` på alle 7 undersider: om-ofa, fagene-vare, for-laerebedrifter, for-laerlinger, aktuelt, kontakt, personvern. `.snarveier` ligger fortsatt inni denne seksjonen der den finnes (de to lærer-sidene) – egen, valgfri komponent, ikke en egen toppvariant.
-- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`), brukt i dag kun på om-ofa.html.
+- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`) – flyttet på om-ofa.html fra sidetoppen til "Hvem møter du?". Sidetoppen på om-ofa.html bruker nå i stedet en bildeplassholder (`.hero-image-placeholder`, gjenbrukt – se Gjenstår) i påvente av et bilde av lokalene.
 - CSS-regelen `.sidetopp` er foreløpig tom (ingen visuell endring nå) – reservert for avstands-/skriftstørrelsesskalaen i punkt 5.
 - **To sider krevde reell oppdeling av `<section>`**, ikke bare et klassenavn, siden sidetopp-innholdet lå sammen med neste seksjon i samme tag:
   - **om-ofa.html**: H1+bilde+bildetekst skilt ut fra "OFA – Opplæringskontor..."-avsnittet (nå egen tekstseksjon).
@@ -104,8 +105,8 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Valgfritt felt: en kort beskrivelse av kontaktområder/hva personen kan hjelpe med, som eget avsnitt mellom rolle og telefon. Brukt på kontakt.html ("Kontaktområder: ...") og i lignende form på for-laerlinger.html ("Kontakt Tonje/Anne Lene om ...").
 
 ### 7. Snarveier (`.snarveier`)
-- Brukes: for-laerebedrifter, for-laerlinger.
-- Endring: ingen – allerede én versjon.
+- Brukes: for-laerebedrifter, for-laerlinger, om-ofa (4 knapper: Om OFA, Hvem møter du?, Hva gjør vi?, Vi samarbeider med).
+- Endring: ingen – allerede én versjon. Samme knappefarge (`.btn` / `var(--accent)`) brukt overalt.
 
 ### 8. Tidslinje (`.tidslinje`)
 - Brukes: for-laerebedrifter, for-laerlinger.
@@ -116,7 +117,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Alle tre instansene bruker nå telefonnummeret som en klikkbar `tel:+4793490216`-lenke (internasjonalt format), ikke bare ren tekst.
 
 ### 10. Tekstseksjon (h2 + avsnitt/liste)
-- Brukes: personvern.html (alle avsnitt), fagene-vare.html (fagtekstene), for-laerebedrifter.html ("Andre muligheter", "Hva koster det?"), for-laerlinger.html ("Andre veier" m.fl.), avsluttende kryss-lenker på lærer-sidene, om-ofa.html ("OFA – Opplæringskontor...", "Vi samarbeider med"), m.fl.
+- Brukes: personvern.html (alle avsnitt), fagene-vare.html (fagtekstene), for-laerebedrifter.html ("Andre muligheter", "Hva koster det?"), for-laerlinger.html ("Andre veier" m.fl.), avsluttende kryss-lenker på lærer-sidene, om-ofa.html (brødteksten om OFA, uten egen overskrift, og "Vi samarbeider med"), m.fl.
 - Endring: ingen strukturell endring – gi den et offisielt navn (Tekstseksjon) slik at den ikke forveksles med Sidetopp eller andre typer ved fremtidig arbeid.
 - **Kulepunktstil (gjennomført):** vanlige `<ul>`-lister inni `<main>` (tidligere kun stylet inni `.tidslinje`) bruker nå samme lille, terrakotta-fargede kulepunkt overalt – `main ul` i style.css. Gjelder bl.a. "Vi samarbeider med" (om-ofa.html), "Søk læreplass" (for-laerlinger.html) og "E-post og telefon" (personvern.html).
 - **Liste-semantikk for skjermlesere (gjennomført):** alle fire `<ul>`-elementene i `<main>` (om-ofa.html, for-laerlinger.html, for-laerebedrifter.html, personvern.html) har fått `role="list"`. Årsak: `list-style: none` er kjent for å fjerne liste-semantikken i VoiceOver/Safari (ikke i Chrome/NVDA/JAWS) med mindre rollen settes eksplisitt. Ikke testet med ekte VoiceOver, kun bekreftet via Chromiums eget tilgjengelighetstre. Gjelder foreløpig kun lister i `<main>` – `nav ul` og `.footer-col ul` har samme `list-style: none` og samme teoretiske risiko, men er bevisst holdt utenfor denne runden.
@@ -130,6 +131,11 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Selve lenke-adressene markeres med `<!-- SJEKK -->` inntil de er bekreftet av bruker.
 - Personvern.html får et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5, og "Aktuelt-siden" for sammenhengen): det skal stå at nettsiden lenker til OFAs kontoer på Instagram og Facebook, at ingen opplysninger sendes dit før besøkeren selv klikker, og at Metas vilkår gjelder der.
 - Footerens kontaktspalte ("Kontakt") har i tillegg fått en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
+
+## Header – Fagbrev.io-lenke (gjennomført)
+
+- Logoikonet ved siden av "Fagbrev.io" i toppmenyen har fått `alt="Fagbrev.io"` på alle 8 sider (var `alt=""`).
+- **Merk – mulig tilgjengelighetskonflikt:** CLAUDE.md sier at rent dekorative bilder (ikoner med tekst ved siden av) skal ha `alt=""`, nettopp for å unngå at skjermlesere leser opp samme tekst to ganger. Her følger lenken nå ikonet med `alt="Fagbrev.io"` rett etterfulgt av den synlige teksten "Fagbrev.io", så en skjermleser vil kunne lese "Fagbrev.io Fagbrev.io" for denne ene lenken. Endret på eksplisitt instruks – vurder å sette `alt=""` tilbake dersom dette oppleves som et problem.
 
 ## Plassholder- og SJEKK-konvensjon (gjelder alle sider)
 
@@ -175,7 +181,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ## Gjenstår (teknisk rydding, egen runde)
 
-- Fjern dødt CSS: `.hero-image-placeholder` (style.css, linje 209–219) og all `form`/`form label`/`form input, textarea`-styling (linje 371–391) – ingen HTML-fil bruker lenger disse.
+- Fjern dødt CSS: all `form`/`form label`/`form input, textarea`-styling (linje 371–391) – ingen HTML-fil bruker lenger disse. (`.hero-image-placeholder` er nå tatt i bruk igjen på om-ofa.html, se "Sider".)
 - `#6a675e` er nå samlet i `--muted-text` (se Kontrastfiks over). Gjør `#e0dcd3` (border-fargen, 5 hardkodede forekomster) om til en tilsvarende CSS-variabel (f.eks. `--border`).
 - Rett skriftvekt i `.tidslinje-steg` slik at den bruker samme font (Poppins) som resten av de fete elementene i komponenten, eller dokumenter bevisst hvorfor den skal bruke brødtekstfonten.
 - Konverter bilder til WebP (krav i PROSJEKTBRIEF.md, ikke oppfylt i dag – bildene er komprimert JPG).
