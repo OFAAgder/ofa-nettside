@@ -21,6 +21,7 @@
 - Avstand: Elementer som hører sammen, står tett. Mellom ulike deler er det tydelig mer luft. Bruk alltid avstandsverdiene i stilarket, ikke egne verdier.
 - Sideoppbygning: hovedoverskrift, innledning, snarveiknapper (hvis siden har dem), og deretter innholdet.
 - Bildetekster (både fotokreditering og beskrivende bildetekster) bruker samme stil, `.photo-credit` i stilarket, slik at alle bildetekster på nettstedet ser like ut.
+- Knappestiler: fylte terrakottaknapper (`.btn`) brukes til snarveier internt på siden (f.eks. hopp til en seksjon). Kantknapper (`.btn-ghost`) brukes til lenker som går ut av nettstedet, for eksempel kart.
 
 ## Tilgjengelighet (WCAG 2.1, nivå AA)
 
@@ -34,5 +35,6 @@ Nettsiden skal følge WCAG 2.1 nivå AA. Dette gjelder alt arbeid fremover, ikke
 - Tekst skal ha kontrast på minst 4,5:1 mot bakgrunnen (3:1 for stor tekst). Sjekk ved alle fargeendringer.
 - Ikke fjern standard fokusmarkering (`outline`) uten å erstatte med en tydelig alternativ fokusstil.
 - Lenker skal skilles fra vanlig tekst med mer enn bare farge (f.eks. understreking), og aktiv side i menyen skal markeres med mer enn bare farge (f.eks. også fet skrift).
+- Lenker som åpnes i ny fane (`target="_blank"`) skal ha en skjult tekst for skjermlesere som sier det, f.eks. `<span class="visually-hidden"> (åpnes i ny fane)</span>` rett før `</a>`.
 
 **Status og gjenstående arbeid:** se Gjenstår i BYGGEPLAN.md.

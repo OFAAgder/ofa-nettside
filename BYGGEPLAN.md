@@ -13,7 +13,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
    - H1 "Om OFA"
    - To-kolonners rad fra nettbrettbredde (≥700px): innledning (to avsnitt, venstre, maks 70 tegn bredde, toppjustert) og skiltbilde (`images/skilt-kartheia-web.jpg`, høyre, 180px bredt – omtrent like høyt som teksten). På mobil (<700px) stables de i rekkefølgen innledning → skiltbilde (samme 180px bredde, venstrejustert), med knappene mellom dem (se under).
    - Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) – ligger under to-kolonnersraden på desktop/nettbrett (egen rad, full bredde), og mellom innledning og skiltbilde på mobil. Tydelig større avstand opp til raden over enn ned til bildet under (se Avstand-notatet under type 2).
-   - Bilde av lokalene (`images/ofa-lokaler-web.jpg`), full bredde, med bildetekst («Lokalene våre i Kartheia 5, Kristiansand, der vi deler kontor med to andre opplæringskontor.») og en «Vis i kart»-lenke på samme linje, etter et punktum (samme oppskrift som kontakt.html sin «Besøk oss»-del: ren Google Maps-søkelenke, ny fane, `rel="noopener noreferrer"`, ingen innebygd kart). Bildeteksten står under bildet og bruker `.photo-credit`-stilen, som alle andre bildetekster på siden.
+   - Bilde av lokalene (`images/ofa-lokaler-web.jpg`), full bredde, med bildetekst under (`.photo-credit`) og en egen «Vis i kart»-knapp (`.btn-ghost`) under der igjen (se eget punkt lenger ned).
    - Setningen "Vi holder til i Kartheia 5..." er fjernet fra innledningen – informasjonen ligger nå i bildeteksten under lokale-bildet i stedet.
 2. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene – samme overskriftsnivå og stil, `<h3>` uten egen klasse på begge) + lenke til kontaktsiden, i et topartsoppsett (`.bilde-tekst-grid`, ny klasse): bilde til venstre og tekst til høyre fra nettbrettbredde (≥700px), loddrett midtstilt (`align-items: center`) med `column-gap: 2rem` (samme avstandsverdi som mellom innledningen og skiltbildet i sidetoppen), stablet på mobil (uendret der: full bredde, `gap: 1.5rem`)
 3. "Hva gjør vi?" – Tekstkort (type 4)
@@ -54,7 +54,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 1. H1 "Kontakt" + intro – Sidetopp – underside (type 2)
 2. "Kontaktpersoner" – Personkort (type 6), med kontaktområder som eget felt
 3. "Sentralbord og e-post" – Kontaktboks (type 9) + Tekstseksjon (advarselstekst)
-4. "Besøk oss" – Tekstseksjon (type 10): adresse + lenke til Google Maps-søk (åpnes i ny fane, ingen innebygd kart)
+4. "Besøk oss" – Tekstseksjon (type 10): adresse + «Vis i kart»-knapp (`.btn-ghost`, samme stil og plassering som om-ofa.html, rett under adressen) til Google Maps-søk (åpnes i ny fane, ingen innebygd kart)
 
 ### 8. personvern.html
 1. H1 + ingress – Sidetopp – underside (type 2)
@@ -157,6 +157,18 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Selve lenke-adressene markeres med `<!-- SJEKK -->` inntil de er bekreftet av bruker.
 - Personvern.html får et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5, og "Aktuelt-siden" for sammenhengen): det skal stå at nettsiden lenker til OFAs kontoer på Instagram og Facebook, at ingen opplysninger sendes dit før besøkeren selv klikker, og at Metas vilkår gjelder der.
 - Footerens kontaktspalte ("Kontakt") har i tillegg fått en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
+
+## Knapper og eksterne lenker (gjennomført, gjelder alle sider)
+
+- **Knappestiler (regel, se CLAUDE.md):** fylte terrakottaknapper (`.btn`) brukes til snarveier internt på siden (hopp til en seksjon). Kantknapper (`.btn-ghost`, gjennomsiktig bakgrunn, terrakotta kant/tekst, fylles ved hover) brukes til lenker som går ut av nettstedet, f.eks. kart. Brukt på om-ofa.html og kontakt.html sine «Vis i kart»-knapper i dag.
+- **«(åpnes i ny fane)» for skjermlesere (regel, se CLAUDE.md):** alle lenker med `target="_blank"` har fått en skjult `<span class="visually-hidden"> (åpnes i ny fane)</span>` rett før `</a>`, slik at skjermlesere varsler om dette (synlig tekst og lenkeadresse er uendret). Gjennomført på alle forekomster i dag:
+  - Fagbrev.io-lenken i toppmenyen (alle 8 sider).
+  - «Vis i kart» (om-ofa.html, kontakt.html).
+  - Agder fylkeskommune, Tangen, Eilert Sundt og Sam Eyde videregående skole (om-ofa.html, "Vi samarbeider med").
+  - «Les alle kravene hos Agder fylkeskommune» og «Søk om godkjenning» (for-laerebedrifter.html, "Bli lærebedrift"), samt Utdanningsdirektoratet (for-laerebedrifter.html, "Lærlingtilskudd og andel til bedrift").
+  - vigo.no og Fagbrev.io (for-laerlinger.html).
+  - GitHubs personvernerklæring (personvern.html).
+  - Fremtidige lenker med `target="_blank"` skal følge samme mønster.
 
 ## Plassholder- og SJEKK-konvensjon (gjelder alle sider)
 
