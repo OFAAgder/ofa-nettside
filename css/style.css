@@ -352,6 +352,21 @@ main ul li::before {
   padding: 1.5rem 1.5rem 1.5rem 1.25rem;
 }
 
+.medlem-bakgrunn {
+  background-color: #e0dcd3;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: hidden;
+}
+
+.medlem-innhold {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
 .table-wrap {
   overflow-x: auto;
   margin: 1.5rem 0;
