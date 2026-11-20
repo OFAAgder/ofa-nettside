@@ -215,12 +215,26 @@ main {
   object-position: center 58%;
   border-radius: 8px;
   display: block;
-  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 @media (max-width: 700px) {
   .lokaler-foto {
     aspect-ratio: 16 / 9;
+  }
+}
+
+.bilde-tekst-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .bilde-tekst-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
 }
 
@@ -252,6 +266,19 @@ main {
 
 section {
   margin-bottom: 2.5rem;
+}
+
+main p,
+main ul {
+  max-width: 70ch;
+}
+
+.snarveier,
+.card p,
+.kontaktboks p,
+.tidslinje p,
+.stegmodell-steg p {
+  max-width: none;
 }
 
 .sidetopp {

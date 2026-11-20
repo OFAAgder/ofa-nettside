@@ -9,12 +9,11 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 2. "Våre tjenester" – Lenkekort (type 5) + CTA-knapp
 
 ### 2. om-ofa.html
-1. H1 + Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) + bilde av lokalene (`images/ofa-lokaler-web.jpg`) – Sidetopp – underside (type 2)
-2. Innledning (kort, uten egen overskrift, kun tre avsnitt) – Tekstseksjon (type 10)
-3. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene) + lenke til kontaktsiden
-4. "Hva gjør vi?" – Tekstkort (type 4)
-5. "Vår historie" – Tekstseksjon (type 10), enkel liste med årstall i fet skrift (samme listestil som "Andre veier"/"Opplæringsløp for voksne")
-6. "Vi samarbeider med" – Tekstseksjon (type 10)
+1. H1 + innledning (tre avsnitt, uten egen overskrift) + Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) + bilde av lokalene (`images/ofa-lokaler-web.jpg`) – Sidetopp – underside (type 2), følger sideoppbygningsregelen i CLAUDE.md (overskrift, innledning, knapper, innhold)
+2. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene) + lenke til kontaktsiden, i et topartsoppsett (`.bilde-tekst-grid`, ny klasse): bilde til venstre og tekst til høyre fra nettbrettbredde (≥700px), stablet på mobil
+3. "Hva gjør vi?" – Tekstkort (type 4)
+4. "Vår historie" – Tekstseksjon (type 10), enkel liste med årstall i fet skrift (samme listestil som "Andre veier"/"Opplæringsløp for voksne")
+5. "Vi samarbeider med" – Tekstseksjon (type 10)
 
 ### 3. fagene-vare.html
 1. H1 + intro – Sidetopp – underside (type 2)
@@ -81,8 +80,8 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ### 2. Sidetopp – underside (`.sidetopp`, gjennomført)
 - Brukes nå på den første `<section>` på alle 7 undersider: om-ofa, fagene-vare, for-laerebedrifter, for-laerlinger, aktuelt, kontakt, personvern. `.snarveier` ligger fortsatt inni denne seksjonen der den finnes (de to lærer-sidene) – egen, valgfri komponent, ikke en egen toppvariant.
-- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`) – flyttet på om-ofa.html fra sidetoppen til "Hvem møter du?". Sidetoppen på om-ofa.html bruker nå i stedet et ekte bilde av lokalene (`.lokaler-foto`, ny klasse), plassert etter knappene (rekkefølge: H1, knapper, bilde, innledning). Ingen fotokreditering – brukerens eget bilde.
-- `.lokaler-foto` bruker `aspect-ratio` + `object-fit: cover` for å vise et bredt utsnitt sentrert på bygningen (21:9 på desktop, 16:9 på mobil, brytningspunkt 700px), i stedet for å beskjære selve bildefilen til dette formatet. `object-position: center 58%` justerer utsnittet for å vise mindre himmel og asfalt.
+- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`) – flyttet på om-ofa.html fra sidetoppen til "Hvem møter du?". Sidetoppen på om-ofa.html bruker nå i stedet et ekte bilde av lokalene (`.lokaler-foto`, ny klasse), plassert sist i sidetoppen, etter innledning og knapper (rekkefølge: H1, innledning, knapper, bilde – se sideoppbygningsregelen i CLAUDE.md). Ingen fotokreditering – brukerens eget bilde.
+- `.lokaler-foto` bruker `aspect-ratio` + `object-fit: cover` for å vise et bredt utsnitt sentrert på bygningen (21:9 på desktop, 16:9 på mobil, brytningspunkt 700px), i stedet for å beskjære selve bildefilen til dette formatet. `object-position: center 58%` justerer utsnittet for å vise mindre himmel og asfalt. Egne avstandsverdier (`margin-top: 3rem` ned fra knappene – ca. det dobbelte av `.snarveier` sin `margin-top: 1.5rem` – og `margin-bottom: 2.5rem` ned til neste seksjon, samme verdi som den vanlige avstanden mellom seksjoner).
 - CSS-regelen `.sidetopp` er foreløpig tom (ingen visuell endring nå) – reservert for avstands-/skriftstørrelsesskalaen i punkt 5.
 - **To sider krevde reell oppdeling av `<section>`**, ikke bare et klassenavn, siden sidetopp-innholdet lå sammen med neste seksjon i samme tag:
   - **om-ofa.html**: H1+bilde+bildetekst skilt ut fra "OFA – Opplæringskontor..."-avsnittet (nå egen tekstseksjon).
@@ -123,6 +122,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Endring: ingen strukturell endring – gi den et offisielt navn (Tekstseksjon) slik at den ikke forveksles med Sidetopp eller andre typer ved fremtidig arbeid.
 - **Kulepunktstil (gjennomført):** vanlige `<ul>`-lister inni `<main>` (tidligere kun stylet inni `.tidslinje`) bruker nå samme lille, terrakotta-fargede kulepunkt overalt – `main ul` i style.css. Gjelder bl.a. "Vi samarbeider med" (om-ofa.html), "Søk læreplass" (for-laerlinger.html) og "E-post og telefon" (personvern.html).
 - **Liste-semantikk for skjermlesere (gjennomført):** alle fire `<ul>`-elementene i `<main>` (om-ofa.html, for-laerlinger.html, for-laerebedrifter.html, personvern.html) har fått `role="list"`. Årsak: `list-style: none` er kjent for å fjerne liste-semantikken i VoiceOver/Safari (ikke i Chrome/NVDA/JAWS) med mindre rollen settes eksplisitt. Ikke testet med ekte VoiceOver, kun bekreftet via Chromiums eget tilgjengelighetstre. Gjelder foreløpig kun lister i `<main>` – `nav ul` og `.footer-col ul` har samme `list-style: none` og samme teoretiske risiko, men er bevisst holdt utenfor denne runden.
+- **Lesebredde (gjennomført, gjelder alle sider):** `main p, main ul { max-width: 70ch; }` begrenser brødtekst og lister til ca. 70 tegn lesebredde, per designregelen i CLAUDE.md. Unntak (`max-width: none`) for `.snarveier` (knapperad), `.card p` (tekstkort), `.kontaktboks p` (kontaktboks), `.tidslinje p` og `.stegmodell-steg p` (tidslinjer) – disse kan fortsatt gå over hele innholdsbredden. `.tidslinje` og `.stegmodell-liste` er `<ol>`, ikke `<ul>`, og er derfor ikke truffet av regelen i utgangspunktet. Sider med egne, mer spesifikke bredde-regler (f.eks. `.hero p` på index.html) er upåvirket, siden disse har høyere CSS-spesifisitet.
 
 ### 11. Stegmodell (`.stegmodell`, ny, gjennomført)
 - Brukes: for-laerlinger.html, "Veien til fag- og svennebrev" (erstatter den gamle `.tidslinje`-bruken der). Bygget for gjenbruk, tenkt brukt på fagene-vare.html senere ved behov.

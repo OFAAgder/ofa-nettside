@@ -14,7 +14,12 @@
 - Plassholdertekst skrives alltid [Plassholder: ...].
 - Alt faktainnhold som ikke er bekreftet (telefon, org.nr., priser, frister, prosesser) markeres med <!-- SJEKK -->.
 - Bilder lagres som WebP.
-- Avstander følger en felles skala (fastsettes i ryddingen; inntil da: ikke innfør nye verdier).
+
+## Design
+
+- Brødtekst (avsnitt og lister) har maks bredde ca. 70 tegn. Bilder, knapperader, bokser og tidslinjer kan gå over hele innholdsbredden.
+- Avstand: Elementer som hører sammen, står tett. Mellom ulike deler er det tydelig mer luft. Bruk alltid avstandsverdiene i stilarket, ikke egne verdier.
+- Sideoppbygning: hovedoverskrift, innledning, snarveiknapper (hvis siden har dem), og deretter innholdet.
 
 ## Tilgjengelighet (WCAG 2.1, nivå AA)
 
