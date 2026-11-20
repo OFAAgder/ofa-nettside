@@ -221,6 +221,27 @@ main {
 
 .lokaler-foto + .photo-credit {
   text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+.btn-ghost {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--accent-dark);
+  border: 2px solid var(--accent);
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.btn-ghost:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.kart-knapp {
+  margin-top: 0;
   margin-bottom: 2.5rem;
 }
 
