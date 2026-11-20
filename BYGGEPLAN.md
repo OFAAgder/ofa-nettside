@@ -9,11 +9,12 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 2. "Våre tjenester" – Lenkekort (type 5) + CTA-knapp
 
 ### 2. om-ofa.html
-1. H1 + bildeplassholder (lokalene, bilde kommer senere) + Snarveier (type 7, 4 knapper) – Sidetopp – underside (type 2)
-2. Brødtekst om OFA (historikk, uten egen overskrift) – Tekstseksjon (type 10)
+1. H1 + bildeplassholder (lokalene, bilde kommer senere) + Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) – Sidetopp – underside (type 2)
+2. Innledning (kort, uten egen overskrift, kun tre avsnitt) – Tekstseksjon (type 10)
 3. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene) + lenke til kontaktsiden
 4. "Hva gjør vi?" – Tekstkort (type 4)
-5. "Vi samarbeider med" – Tekstseksjon (type 10)
+5. "Vår historie" – Tekstseksjon (type 10), enkel liste med årstall i fet skrift (samme listestil som "Andre veier"/"Opplæringsløp for voksne")
+6. "Vi samarbeider med" – Tekstseksjon (type 10)
 
 ### 3. fagene-vare.html
 1. H1 + intro – Sidetopp – underside (type 2)
@@ -105,7 +106,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Valgfritt felt: en kort beskrivelse av kontaktområder/hva personen kan hjelpe med, som eget avsnitt mellom rolle og telefon. Brukt på kontakt.html ("Kontaktområder: ...") og i lignende form på for-laerlinger.html ("Kontakt Tonje/Anne Lene om ...").
 
 ### 7. Snarveier (`.snarveier`)
-- Brukes: for-laerebedrifter, for-laerlinger, om-ofa (4 knapper: Om OFA, Hvem møter du?, Hva gjør vi?, Vi samarbeider med).
+- Brukes: for-laerebedrifter, for-laerlinger, om-ofa (4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med).
 - Endring: ingen – allerede én versjon. Samme knappefarge (`.btn` / `var(--accent)`) brukt overalt.
 
 ### 8. Tidslinje (`.tidslinje`)
