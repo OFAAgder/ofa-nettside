@@ -2,7 +2,7 @@
 
 Dette er oppgavene som må gjøres idet nettsiden lanseres for alvor (blir synlig og søkbar for publikum). Se også BYGGEPLAN.md, særlig seksjonene "Lansering – noindex og publiseringsmekanikk" og "Aktuelt-siden", for bakgrunn og begrunnelse.
 
-- [ ] Fjern `noindex, nofollow` fra alle sider, slik at nettstedet blir synlig i søkemotorer.
+- [ ] Fjern `noindex, nofollow` fra alle sider unntatt 404, slik at nettstedet blir synlig i søkemotorer.
   - Gjelder de 7 innholdssidene (index.html, om-ofa.html, fagene-vare.html, for-laerebedrifter.html, for-laerlinger.html, kontakt.html, personvern.html) – og aktuelt.html når den er flettet inn igjen, se under.
   - **Unntak:** `404.html` skal beholde `noindex, nofollow` for alltid. Det er vanlig praksis for feilsider, og hindrer at feilsiden selv dukker opp som treff i søk.
 - [ ] Oppdater eller fjern `robots.txt` (ligger i prosjektroten og disallower i dag alt med `Disallow: /`).
