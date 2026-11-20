@@ -317,6 +317,35 @@ main {
   border-radius: 8px;
   margin-bottom: 2rem;
   font-size: 0.95rem;
+  text-align: center;
+}
+
+.fagbilde-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 700px) {
+  .fagbilde-grid {
+    grid-template-columns: 1fr 280px;
+    column-gap: 2rem;
+  }
+}
+
+.fagbilde-placeholder,
+.fagbilde {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.fagbilde {
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .btn {

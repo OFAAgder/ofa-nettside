@@ -21,11 +21,12 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 5. "Vi samarbeider med" – Tekstseksjon (type 10)
 
 ### 3. fagene-vare.html
-1. H1 + intro – Sidetopp – underside (type 2)
-2. Frisørfaget – Tekstseksjon (type 10), i fag-seksjon-ramme (type 3)
-3. Blomsterdekoratørfaget – Tekstseksjon (type 10), i fag-seksjon-ramme
-4. Salgsfaget – fagbrev nr. 2 – Tekstseksjon (type 10), i fag-seksjon-ramme
-5. Avsluttende lenker (til lærling-siden/kontakt) – Tekstseksjon (type 10)
+1. H1 + intro («Vi har lærlinger i disse fagene:») + Snarveier (type 7, 3 knapper: Frisørfaget, Blomsterdekoratørfaget, Salgsfaget) – Sidetopp – underside (type 2)
+2. Frisørfaget – Tekstseksjon (type 10) + plassholderbilde (4:5), i topartsoppsett (`.fagbilde-grid`, ny klasse: tekst venstre, bilde høyre fra 700px, toppjustert, bilde under teksten på mobil), i fag-seksjon-ramme (type 3)
+3. Blomsterdekoratørfaget – samme oppsett (`.fagbilde-grid`) + plassholderbilde, i fag-seksjon-ramme
+4. "Veien til fag- og svennebrev" – samme Stegmodell (type 11) som for-laerlinger.html, med samme overskrift, tekst og fotnote (duplisert, ikke delt kildekode – se merknad under type 11), i fag-seksjon-ramme
+5. Salgsfaget – fagbrev nr. 2 – samme oppsett (`.fagbilde-grid`) + plassholderbilde, i fag-seksjon-ramme
+6. Avsluttende lenker (til lærling-siden/kontakt) – Tekstseksjon (type 10)
 
 ### 4. for-laerebedrifter.html
 1. H1 + intro – Sidetopp – underside (type 2) + Snarveier (type 7)
@@ -104,6 +105,8 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 ### 3. Fag-seksjon (`.fag-section`)
 - Brukes: fagene-vare, for-laerebedrifter, for-laerlinger.
 - Endring: ingen strukturell endring – allerede én versjon. Fungerer som ramme rundt andre seksjonstyper (tekstseksjon, tekstkort, tidslinje). Navnet vurderes på nytt, se "Gjenstår".
+- **`.fagbilde-grid` (ny, fagene-vare.html):** samme prinsipp som `.om-topp-grid`/`.bilde-tekst-grid` på om-ofa.html – topartsoppsett med tekst og bilde. Tekst til venstre (`1fr`, følger 70ch-regelen automatisk), bilde til høyre (280px bredt, 4:5-format via `aspect-ratio`) fra 700px, toppjustert (`align-items: start`). Under 700px: tekst først, bilde under i full bredde, fortsatt 4:5. Brukt likt på alle tre fagene.
+- **Plassholderbilder (nytt, midlertidig):** ingen bilder finnes ennå for de tre fagene. Hvert sted har i dag en `<div class="hero-image-placeholder fagbilde-placeholder">[Plassholder: bilde ...]</div>` (gjenbruker den eksisterende `.hero-image-placeholder`-stilen, med en ny `.fagbilde-placeholder`-modifikator som bytter ut den faste 320px-høyden med 4:5-forhold). En HTML-kommentar rett over hver plassholder viser hvilken `<img>`-tag den skal erstattes med (filnavn i `images/`, klassen `.fagbilde` – allerede ferdig stylet med `object-fit: cover` for 4:5-formatet). Alternativ tekst er ikke skrevet ennå – bruker gir ordrett tekst når bildene er klare. Se også Gjenstår/LANSERING.md.
 
 ### 4. Tekstkort (navngitt `.card-grid`/`.card`-variant)
 - Brukes: om-ofa ("Hva gjør vi?"), for-laerebedrifter, for-laerlinger, aktuelt (tas med nå).
@@ -138,7 +141,8 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - **Lesebredde (gjennomført, gjelder alle sider):** `main p, main ul { max-width: 70ch; }` begrenser brødtekst og lister til ca. 70 tegn lesebredde, per designregelen i CLAUDE.md. Unntak (`max-width: none`) for `.snarveier` (knapperad), `.card p` (tekstkort), `.kontaktboks p` (kontaktboks), `.tidslinje p` og `.stegmodell-steg p` (tidslinjer) – disse kan fortsatt gå over hele innholdsbredden. `.tidslinje` og `.stegmodell-liste` er `<ol>`, ikke `<ul>`, og er derfor ikke truffet av regelen i utgangspunktet. Sider med egne, mer spesifikke bredde-regler (f.eks. `.hero p` på index.html) er upåvirket, siden disse har høyere CSS-spesifisitet.
 
 ### 11. Stegmodell (`.stegmodell`, ny, gjennomført)
-- Brukes: for-laerlinger.html, "Veien til fag- og svennebrev" (erstatter den gamle `.tidslinje`-bruken der). Bygget for gjenbruk, tenkt brukt på fagene-vare.html senere ved behov.
+- Brukes: for-laerlinger.html og fagene-vare.html, begge under overskriften "Veien til fag- og svennebrev" (erstatter den gamle `.tidslinje`-bruken på for-laerlinger.html).
+- **Duplisert, ikke delt kildekode:** nettsiden er ren statisk HTML uten noe bygge-steg eller inkluderingsmekanisme (ingen Jekyll, ingen JavaScript-maler). Det finnes derfor ingen måte å la teksten ligge i kun én fil og vises på to sider, uten å innføre noe nytt (f.eks. et lite JavaScript som henter inn innholdet, eller en overgang til en statisk nettstedsgenerator). Etter spørsmål, valgte brukeren å kopiere samme HTML/CSS-oppsett og tekst til fagene-vare.html i stedet (samme mønster som alle andre "gjenbrukte" komponenter på siden i dag, f.eks. `.card`/`.kontaktboks`). Konsekvens: endres modell-teksten, må den endres i begge filer.
 - Visuell modell i ren HTML/CSS (ingen bilder/ikoner): fire trinn på rad i en `<ol role="list">`, med en pil (ren CSS-trekant via `::after`, uten tekstinnhold) mellom hvert trinn. Hvert trinn har egen etikett (f.eks. "År 1"), tittel (f.eks. "Vg1") og beskrivelse.
 - To kategorietiketter ("Skole", "Lærebedrift") vises i en egen rad over trinnene på desktop, og spenner visuelt over flere trinn ved hjelp av CSS Grid (`grid-column: span 2` for "Skole"). Trinn 4 ("Mål") har ingen kategorietikett og skiller seg i stedet ut med en lysere bakgrunnsfarge (`#e0dcd3`, samme verdi som ellers på siden – se Gjenstår).
 - **Mobil:** trinnene stables under hverandre, og pilene snur til å peke nedover. Kategorietikett-raden skjules på mobil (`display: none` under 700px), siden den todelte kolonne-spennet ("Skole" over to trinn) ikke har noen naturlig oversettelse til ett enkelt, stablet kolonne – trinnenes egne etiketter/titler ("Vg1", "Vg2", "Læretid") bærer fortsatt den informasjonen alene. Si fra dersom kategorietikettene bør vises på mobil på en annen måte (f.eks. gjentatt per trinn).

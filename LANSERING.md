@@ -11,5 +11,6 @@ Dette er oppgavene som må gjøres idet nettsiden lanseres for alvor (blir synli
   - Rett plassholderteksten i aktuelt.html om Instagram-innhold til en ren lenke før fletting – den er i strid med regelen om at sosiale medier kun skal lenkes til, aldri innebygges (se CLAUDE.md).
   - Hvis nei: la aktuelt.html bli liggende på egen branch, og vent til neste lanseringsvurdering.
 - [ ] Gå gjennom alle `<!-- SJEKK -->`-markeringer i kodebasen og bekreft at informasjonen stemmer (telefon, org.nr., priser, frister, prosesser), eller rett den. Fjern markeringen når innholdet er bekreftet.
+- [ ] Bytt ut de tre plassholderbildene på fagene-vare.html med ekte bilder (samtykke og bruksrett avklart med bedriftene).
 - [ ] Ved overgang til eget domene: avklar om nettsiden fortsatt driftes av GitHub Pages (eget domene peker dit) eller flyttes til et webhotell. Ved flytting skal avsnittet om logger i personvern.html skrives om med ny driftsleverandør, og avsnittet om overføring til USA vurderes på nytt.
 - [ ] Vurder om gjenstående punkter i BYGGEPLAN.md ("Gjenstår" og "Forslag til rekkefølge") bør fullføres før lansering, eller kan tas etterpå.
