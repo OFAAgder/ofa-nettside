@@ -219,28 +219,8 @@ main {
   margin-bottom: 0.4rem;
 }
 
-.btn-ghost {
-  display: inline-block;
-  background-color: transparent;
-  color: var(--accent-dark);
-  border: 2px solid var(--accent);
-  padding: 0.7rem 1.4rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.btn-ghost:hover {
-  background-color: var(--accent);
-  color: #fff;
-}
-
 .lokaler-foto + .photo-credit {
   text-align: right;
-}
-
-.lokaler-foto + .photo-credit + p {
-  margin-top: 1rem;
   margin-bottom: 2.5rem;
 }
 
@@ -373,11 +353,16 @@ main ul {
   max-width: 70ch;
 }
 
+main figure {
+  margin: 0;
+}
+
 .snarveier,
 .card p,
 .kontaktboks p,
 .tidslinje p,
-.stegmodell-steg p {
+.stegmodell-steg p,
+.photo-credit {
   max-width: none;
 }
 

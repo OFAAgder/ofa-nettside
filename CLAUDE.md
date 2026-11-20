@@ -17,7 +17,7 @@
 
 ## Design
 
-- Brødtekst (avsnitt og lister) har maks bredde ca. 70 tegn. Bilder, knapperader, bokser og tidslinjer kan gå over hele innholdsbredden.
+- Brødtekst (avsnitt og lister) har maks bredde ca. 70 tegn. Bilder, bildetekster, knapperader, bokser og tidslinjer kan gå over hele innholdsbredden.
 - Avstand: Elementer som hører sammen, står tett. Mellom ulike deler er det tydelig mer luft. Bruk alltid avstandsverdiene i stilarket, ikke egne verdier.
 - Sideoppbygning: hovedoverskrift, innledning, snarveiknapper (hvis siden har dem), og deretter innholdet.
 - Bildetekster (både fotokreditering og beskrivende bildetekster) bruker samme stil, `.photo-credit` i stilarket, slik at alle bildetekster på nettstedet ser like ut.
