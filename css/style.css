@@ -210,9 +210,18 @@ main {
 .lokaler-foto {
   width: 100%;
   max-width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center 58%;
   border-radius: 8px;
   display: block;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .lokaler-foto {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .hero-image-placeholder {

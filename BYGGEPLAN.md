@@ -9,7 +9,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 2. "Våre tjenester" – Lenkekort (type 5) + CTA-knapp
 
 ### 2. om-ofa.html
-1. H1 + bilde av lokalene (`images/ofa-lokaler-web.jpg`) + Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) – Sidetopp – underside (type 2)
+1. H1 + Snarveier (type 7, 4 knapper: Hvem møter du?, Hva gjør vi?, Vår historie, Vi samarbeider med) + bilde av lokalene (`images/ofa-lokaler-web.jpg`) – Sidetopp – underside (type 2)
 2. Innledning (kort, uten egen overskrift, kun tre avsnitt) – Tekstseksjon (type 10)
 3. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene) + lenke til kontaktsiden
 4. "Hva gjør vi?" – Tekstkort (type 4)
@@ -81,7 +81,8 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ### 2. Sidetopp – underside (`.sidetopp`, gjennomført)
 - Brukes nå på den første `<section>` på alle 7 undersider: om-ofa, fagene-vare, for-laerebedrifter, for-laerlinger, aktuelt, kontakt, personvern. `.snarveier` ligger fortsatt inni denne seksjonen der den finnes (de to lærer-sidene) – egen, valgfri komponent, ikke en egen toppvariant.
-- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`) – flyttet på om-ofa.html fra sidetoppen til "Hvem møter du?". Sidetoppen på om-ofa.html bruker nå i stedet et ekte bilde av lokalene (`.lokaler-foto`, ny klasse: fullbredde, ingen fast høyde – i motsetning til den midlertidige `.hero-image-placeholder`-boksen den erstattet). Ingen fotokreditering lagt til – ukjent om det er aktuelt for dette bildet.
+- Valgfritt element: bilde med bildetekst (`.about-photo` + `.photo-credit`) – flyttet på om-ofa.html fra sidetoppen til "Hvem møter du?". Sidetoppen på om-ofa.html bruker nå i stedet et ekte bilde av lokalene (`.lokaler-foto`, ny klasse), plassert etter knappene (rekkefølge: H1, knapper, bilde, innledning). Ingen fotokreditering – brukerens eget bilde.
+- `.lokaler-foto` bruker `aspect-ratio` + `object-fit: cover` for å vise et bredt utsnitt sentrert på bygningen (21:9 på desktop, 16:9 på mobil, brytningspunkt 700px), i stedet for å beskjære selve bildefilen til dette formatet. `object-position: center 58%` justerer utsnittet for å vise mindre himmel og asfalt.
 - CSS-regelen `.sidetopp` er foreløpig tom (ingen visuell endring nå) – reservert for avstands-/skriftstørrelsesskalaen i punkt 5.
 - **To sider krevde reell oppdeling av `<section>`**, ikke bare et klassenavn, siden sidetopp-innholdet lå sammen med neste seksjon i samme tag:
   - **om-ofa.html**: H1+bilde+bildetekst skilt ut fra "OFA – Opplæringskontor..."-avsnittet (nå egen tekstseksjon).
