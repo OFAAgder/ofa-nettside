@@ -301,6 +301,101 @@ section {
   margin: 0;
 }
 
+.stegmodell {
+  margin: 1.5rem 0;
+}
+
+.stegmodell-kategorier {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.stegmodell-kategori {
+  margin: 0;
+  text-align: center;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: bold;
+  color: var(--muted-text);
+}
+
+.stegmodell-kategori--skole {
+  grid-column: span 2;
+}
+
+.stegmodell-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.stegmodell-steg {
+  position: relative;
+  border-top: 3px solid var(--accent);
+  padding: 1rem 1.25rem;
+}
+
+.stegmodell-steg--mal {
+  background-color: #e0dcd3;
+}
+
+.stegmodell-etikett {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-bottom: 0.25rem;
+}
+
+.stegmodell-tittel {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: bold;
+  margin: 0 0 0.4rem;
+}
+
+.stegmodell-steg p:last-child {
+  margin: 0;
+}
+
+.stegmodell-steg:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1.5rem;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid var(--accent);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 700px) {
+  .stegmodell-kategorier {
+    display: none;
+  }
+
+  .stegmodell-liste {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stegmodell-steg:not(:last-child)::after {
+    top: auto;
+    left: 50%;
+    right: auto;
+    bottom: -1.5rem;
+    border-top: 10px solid var(--accent);
+    border-bottom: none;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    transform: translateX(-50%);
+  }
+}
+
 main ul {
   list-style: none;
   margin: 0.75rem 0;

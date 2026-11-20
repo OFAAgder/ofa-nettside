@@ -33,7 +33,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 
 ### 5. for-laerlinger.html
 1. H1 + intro – Sidetopp – underside (type 2) + Snarveier (type 7)
-2. "Jeg vil bli lærling" – Tekstseksjon (intro + 1+3-modell) + Tidslinje (type 8) + Tekstseksjon ("Søk læreplass"), i fag-seksjon-ramme
+2. "Bli lærling" – "Veien til fag- og svennebrev" (Stegmodell, type 11: 2+2-modellen) + 1+3-fotnote + Tekstseksjon ("Søk læreplass"), i fag-seksjon-ramme
 3. "Jeg er lærling hos OFA" – Tekstseksjon (intro) + Tekstkort (type 4, fordeler) + Tekstseksjon (Fagbrev.io + "Har du spørsmål") + Personkort (type 6), i fag-seksjon-ramme
 4. "Andre veier" – Tekstseksjon (type 10), i fag-seksjon-ramme
 5. "Kontakt oss" – Kontaktboks (type 9)
@@ -73,7 +73,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 5. Aktuelt-siden tas med i denne runden (se eget avsnitt).
 6. Kontrasten på `.photo-credit` rettes nå til minst 4,5:1 – utsettes ikke lenger til fargepaletten er endelig valgt.
 
-## Seksjonstyper (10 stk, hver skal kun finnes i én versjon)
+## Seksjonstyper (11 stk, hver skal kun finnes i én versjon)
 
 ### 1. Sidetopp – forside (`.hero`)
 - Brukes: index.html.
@@ -122,6 +122,13 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Endring: ingen strukturell endring – gi den et offisielt navn (Tekstseksjon) slik at den ikke forveksles med Sidetopp eller andre typer ved fremtidig arbeid.
 - **Kulepunktstil (gjennomført):** vanlige `<ul>`-lister inni `<main>` (tidligere kun stylet inni `.tidslinje`) bruker nå samme lille, terrakotta-fargede kulepunkt overalt – `main ul` i style.css. Gjelder bl.a. "Vi samarbeider med" (om-ofa.html), "Søk læreplass" (for-laerlinger.html) og "E-post og telefon" (personvern.html).
 - **Liste-semantikk for skjermlesere (gjennomført):** alle fire `<ul>`-elementene i `<main>` (om-ofa.html, for-laerlinger.html, for-laerebedrifter.html, personvern.html) har fått `role="list"`. Årsak: `list-style: none` er kjent for å fjerne liste-semantikken i VoiceOver/Safari (ikke i Chrome/NVDA/JAWS) med mindre rollen settes eksplisitt. Ikke testet med ekte VoiceOver, kun bekreftet via Chromiums eget tilgjengelighetstre. Gjelder foreløpig kun lister i `<main>` – `nav ul` og `.footer-col ul` har samme `list-style: none` og samme teoretiske risiko, men er bevisst holdt utenfor denne runden.
+
+### 11. Stegmodell (`.stegmodell`, ny, gjennomført)
+- Brukes: for-laerlinger.html, "Veien til fag- og svennebrev" (erstatter den gamle `.tidslinje`-bruken der). Bygget for gjenbruk, tenkt brukt på fagene-vare.html senere ved behov.
+- Visuell modell i ren HTML/CSS (ingen bilder/ikoner): fire trinn på rad i en `<ol role="list">`, med en pil (ren CSS-trekant via `::after`, uten tekstinnhold) mellom hvert trinn. Hvert trinn har egen etikett (f.eks. "År 1"), tittel (f.eks. "Vg1") og beskrivelse.
+- To kategorietiketter ("Skole", "Lærebedrift") vises i en egen rad over trinnene på desktop, og spenner visuelt over flere trinn ved hjelp av CSS Grid (`grid-column: span 2` for "Skole"). Trinn 4 ("Mål") har ingen kategorietikett og skiller seg i stedet ut med en lysere bakgrunnsfarge (`#e0dcd3`, samme verdi som ellers på siden – se Gjenstår).
+- **Mobil:** trinnene stables under hverandre, og pilene snur til å peke nedover. Kategorietikett-raden skjules på mobil (`display: none` under 700px), siden den todelte kolonne-spennet ("Skole" over to trinn) ikke har noen naturlig oversettelse til ett enkelt, stablet kolonne – trinnenes egne etiketter/titler ("Vg1", "Vg2", "Læretid") bærer fortsatt den informasjonen alene. Si fra dersom kategorietikettene bør vises på mobil på en annen måte (f.eks. gjentatt per trinn).
+- **Tilgjengelighet:** selve rekkefølgen leses som en ordnet liste (`<ol role="list">`, samme `role="list"`-mønster som resten av `<main>` pga. den kjente Safari/VoiceOver-list-style:none-bugen). Pilene er bygget som rene CSS-trekanter uten noe `content`-tekst, så de finnes ikke i tilgjengelighetstreet i det hele tatt – ikke bare visuelt skjult, men fysisk fraværende for skjermlesere.
 
 ## Footer – sosiale medier (nytt)
 
@@ -178,7 +185,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 ## Gjenstår (teknisk rydding, egen runde)
 
 - Fjern dødt CSS: all `form`/`form label`/`form input, textarea`-styling (linje 371–391) – ingen HTML-fil bruker lenger disse. (`.hero-image-placeholder` er nå tatt i bruk igjen på om-ofa.html, se "Sider".)
-- `#6a675e` er nå samlet i `--muted-text` (se Kontrastfiks over). Gjør `#e0dcd3` (border-fargen, 5 hardkodede forekomster) om til en tilsvarende CSS-variabel (f.eks. `--border`).
+- `#6a675e` er nå samlet i `--muted-text` (se Kontrastfiks over). Gjør `#e0dcd3` (border-/bakgrunnsfargen, 7 hardkodede forekomster per nå) om til en tilsvarende CSS-variabel (f.eks. `--border`).
 - Rett skriftvekt i `.tidslinje-steg` slik at den bruker samme font (Poppins) som resten av de fete elementene i komponenten, eller dokumenter bevisst hvorfor den skal bruke brødtekstfonten.
 - Konverter bilder til WebP (krav i PROSJEKTBRIEF.md, ikke oppfylt i dag – bildene er komprimert JPG).
 - Vurder nytt navn på `.fag-section`, siden den i praksis brukes som en generell rammeseksjon (ikke bare for "fag"-sider) rundt flere seksjonstyper (tekstseksjon, tekstkort, tidslinje).
