@@ -129,7 +129,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Hver lenke skal ha synlig tekst eller `aria-label` (f.eks. "OFA på Instagram").
 - Selve lenke-adressene markeres med `<!-- SJEKK -->` inntil de er bekreftet av bruker.
 - Personvern.html får et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5, og "Aktuelt-siden" for sammenhengen): det skal stå at nettsiden lenker til OFAs kontoer på Instagram og Facebook, at ingen opplysninger sendes dit før besøkeren selv klikker, og at Metas vilkår gjelder der.
-- Footerens kontaktspalte ("Kontakt") har i tillegg fått en linje med org.nr. på alle 8 sider, rett under e-postadressen. Markert med `<!-- SJEKK -->` inntil nummeret er bekreftet av bruker (se "Plassholder- og SJEKK-konvensjon").
+- Footerens kontaktspalte ("Kontakt") har i tillegg fått en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
 
 ## Plassholder- og SJEKK-konvensjon (gjelder alle sider)
 
