@@ -44,9 +44,10 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 3. Instagram-avsnitt – Tekstseksjon (type 10) — se merknad under "Aktuelt-siden": teksten er i strid med den nye regelen om sosiale medier.
 
 ### 7. kontakt.html
-1. H1 + intro – Sidetopp – underside (type 2)
-2. "Kontaktpersoner" – Personkort (type 6)
-3. "Ta kontakt" – Kontaktboks (type 9) + Tekstseksjon (advarselstekst)
+1. H1 "Kontakt" + intro – Sidetopp – underside (type 2)
+2. "Kontaktpersoner" – Personkort (type 6), med kontaktområder som eget felt
+3. "Sentralbord og e-post" – Kontaktboks (type 9) + Tekstseksjon (advarselstekst)
+4. "Besøk oss" – Tekstseksjon (type 10): adresse + lenke til Google Maps-søk (åpnes i ny fane, ingen innebygd kart)
 
 ### 8. personvern.html
 1. H1 + ingress – Sidetopp – underside (type 2)
@@ -100,6 +101,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 ### 6. Personkort (gjennomført)
 - Brukes: kontakt.html og for-laerlinger.html sin kontaktperson-rad. Begge viser nå bilde + navn + rolle + telefon.
 - Telefonnumre: Anne Lene Gabrielsen 902 27 388, Tonje Skomedal Ramse 911 41 299 – begge som klikkbare `tel:+47...`-lenker, bekreftet av bruker, ingen SJEKK-merking.
+- Valgfritt felt: en kort beskrivelse av kontaktområder/hva personen kan hjelpe med, som eget avsnitt mellom rolle og telefon. Brukt på kontakt.html ("Kontaktområder: ...") og i lignende form på for-laerlinger.html ("Kontakt Tonje/Anne Lene om ...").
 
 ### 7. Snarveier (`.snarveier`)
 - Brukes: for-laerebedrifter, for-laerlinger.
@@ -127,6 +129,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - Hver lenke skal ha synlig tekst eller `aria-label` (f.eks. "OFA på Instagram").
 - Selve lenke-adressene markeres med `<!-- SJEKK -->` inntil de er bekreftet av bruker.
 - Personvern.html får et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5, og "Aktuelt-siden" for sammenhengen): det skal stå at nettsiden lenker til OFAs kontoer på Instagram og Facebook, at ingen opplysninger sendes dit før besøkeren selv klikker, og at Metas vilkår gjelder der.
+- Footerens kontaktspalte ("Kontakt") har i tillegg fått en linje med org.nr. på alle 8 sider, rett under e-postadressen. Markert med `<!-- SJEKK -->` inntil nummeret er bekreftet av bruker (se "Plassholder- og SJEKK-konvensjon").
 
 ## Plassholder- og SJEKK-konvensjon (gjelder alle sider)
 
