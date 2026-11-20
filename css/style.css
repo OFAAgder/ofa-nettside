@@ -215,13 +215,62 @@ main {
   object-position: center 58%;
   border-radius: 8px;
   display: block;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
 @media (max-width: 700px) {
   .lokaler-foto {
     aspect-ratio: 16 / 9;
+  }
+}
+
+.om-topp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "tekst"
+    "knapper"
+    "skilt";
+  row-gap: 1.5rem;
+  align-items: start;
+}
+
+.om-topp-skilt {
+  grid-area: skilt;
+}
+
+.om-topp-tekst {
+  grid-area: tekst;
+}
+
+.om-topp-grid .snarveier {
+  grid-area: knapper;
+  margin-top: 0;
+}
+
+.skilt-foto {
+  width: 100%;
+  max-width: 180px;
+  display: block;
+  border-radius: 8px;
+}
+
+@media (min-width: 700px) {
+  .om-topp-grid {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "skilt tekst"
+      "knapper knapper";
+    column-gap: 2rem;
+  }
+
+  .om-topp-grid .snarveier {
+    margin-top: 1.5rem;
+  }
+
+  .skilt-foto {
+    max-width: 220px;
   }
 }
 
