@@ -176,7 +176,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
   - for-laerebedrifter.html: "Dette får dere som medlem" (allerede fra før).
   - for-laerlinger.html: "Dette får du som lærling hos oss" (allerede fra før).
   - om-ofa.html: "Hva gjør vi?" (2026-11-23, ny).
-- **Ikke avklart ennå – venter på brukers vurdering av omfang:** flere seksjoner på nettstedet har samme venstre-linje-stil, men er en annen seksjonstype (Personkort, Lenkekort) eller står tett inntil en annen seksjon på samme side. Kandidater, ikke gjennomført:
+- **Besluttet (2026-11-23): ikke utvidet videre nå.** Bruker valgte å kun fremheve "Hva gjør vi?" denne runden, og la resten stå som i dag. Regelen over gjelder derfor foreløpig kun Tekstkort-seksjoner av samme type som allerede er fremhevet – ikke automatisk Kontaktboks, Personkort eller Lenkekort. Kandidater som ble vurdert og bevisst holdt utenfor denne runden, til en eventuell senere avklaring:
   - for-laerebedrifter.html: "Lærlingtilskudd og andel til bedrift" (inneholder en `.kontaktboks`).
   - for-laerlinger.html: "Kontakt oss" (inneholder både Personkort-kort og en `.kontaktboks` i samme seksjon).
   - kontakt.html: "Kontaktpersoner" (Personkort) og "Sentralbord og e-post" (Kontaktboks) – ville gitt to tilstøtende grå bokser rett etter hverandre dersom begge fremheves.
