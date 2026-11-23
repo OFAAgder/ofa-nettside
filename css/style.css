@@ -215,13 +215,8 @@ main {
   object-position: center 58%;
   border-radius: 8px;
   display: block;
-  margin-top: 1.5rem;
-  margin-bottom: 0.4rem;
-}
-
-.lokaler-foto + .photo-credit {
-  text-align: right;
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .btn-ghost {
