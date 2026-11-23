@@ -40,11 +40,11 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 6. Avsluttende kryss-lenke (til for-laerlinger.html) – Tekstseksjon (type 10)
 
 ### 5. for-laerlinger.html
-1. H1 + intro – Sidetopp – underside (type 2) + Snarveier (type 7)
+1. H1 + intro – Sidetopp – underside (type 2) + Snarveier (type 7, rekkefølge: Jeg vil bli lærling, Jeg er voksen eller har fagbrev fra før, Dette får du som lærling hos oss – oppdatert 2026-11-23 for å følge ny seksjonsrekkefølge)
 2. "Bli lærling" – "Veien til fag- og svennebrev" (Stegmodell, type 11: 2+2-modellen) + 1+3-fotnote + Tekstseksjon ("Søk læreplass"), i fag-seksjon-ramme
-3. "Jeg er lærling hos OFA" – Tekstseksjon (intro) + Tekstkort (type 4, fordeler) + Tekstseksjon (Fagbrev.io + "Har du spørsmål") + Personkort (type 6), i fag-seksjon-ramme
-4. "Andre veier" – Tekstseksjon (type 10), i fag-seksjon-ramme
-5. "Kontakt oss" – Kontaktboks (type 9)
+3. "Andre veier til fag- og svennebrev" – Tekstseksjon (type 10), i fag-seksjon-ramme. **Flyttet opp, over "Dette får du som lærling hos oss" (2026-11-23)**, etter ønske fra bruker.
+4. "Dette får du som lærling hos oss" – Tekstseksjon (intro) + Tekstkort (type 4, fordeler), fremhevet med grå bakgrunn (`.fremhevet-bakgrunn`/`.fremhevet-innhold`), i fag-seksjon-ramme
+5. "Kontakt oss" – Tekstkort (type 4, kontaktpersoner) + Kontaktboks (type 9)
 6. Avsluttende kryss-lenke (til for-laerebedrifter.html) – Tekstseksjon (type 10)
 
 ### 6. aktuelt.html (flyttet til egen branch, ikke i main)
