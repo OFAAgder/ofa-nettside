@@ -256,14 +256,9 @@ main {
   grid-template-columns: 1fr;
   grid-template-areas:
     "tekst"
-    "knapper"
-    "skilt";
+    "knapper";
   row-gap: 1.5rem;
   align-items: start;
-}
-
-.om-topp-skilt {
-  grid-area: skilt;
 }
 
 .om-topp-tekst {
@@ -275,22 +270,7 @@ main {
   margin-top: 0;
 }
 
-.skilt-foto {
-  width: 100%;
-  max-width: 180px;
-  display: block;
-  border-radius: 8px;
-}
-
 @media (min-width: 700px) {
-  .om-topp-grid {
-    grid-template-columns: 1fr 180px;
-    grid-template-areas:
-      "tekst skilt"
-      "knapper knapper";
-    column-gap: 2rem;
-  }
-
   .om-topp-grid .snarveier {
     margin-top: 1.5rem;
   }
