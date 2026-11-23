@@ -18,7 +18,8 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 2. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene – samme overskriftsnivå og stil, `<h3>` uten egen klasse på begge) + lenke til kontaktsiden, i et topartsoppsett (`.bilde-tekst-grid`, ny klasse): bilde til venstre og tekst til høyre fra nettbrettbredde (≥700px), loddrett midtstilt (`align-items: center`) med `column-gap: 2rem` (samme avstandsverdi som mellom innledningen og skiltbildet i sidetoppen), stablet på mobil (uendret der: full bredde, `gap: 1.5rem`)
 3. "Hva gjør vi?" – Tekstkort (type 4)
 4. "Vår historie" – Tekstseksjon (type 10), enkel liste med årstall i fet skrift (samme listestil som "Andre veier"/"Opplæringsløp for voksne")
-5. "Vi samarbeider med" – Tekstseksjon (type 10)
+5. "Styret" – Tekstseksjon (type 10), lenke til styreoversikt i Brønnøysundregisteret (ingen navn/personopplysninger skrevet på siden selv – kun utgående lenke til offentlig register, samme mønster som lenkene i "Vi samarbeider med")
+6. "Vi samarbeider med" – Tekstseksjon (type 10)
 
 ### 3. fagene-vare.html
 1. H1 + intro («Vi har lærlinger i disse fagene:») + Snarveier (type 7, 3 knapper: Frisørfaget, Blomsterdekoratørfaget, Salgsfaget) – Sidetopp – underside (type 2)
