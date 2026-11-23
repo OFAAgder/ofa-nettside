@@ -17,7 +17,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
    - **Skiltbildet (`images/skilt-kartheia-web.jpg`) er fjernet fra sidetoppen (2026-11-23)**, etter brukers vurdering av at bildet ikke fungerte godt nok. Sidetoppen hadde tidligere et topartsoppsett (innledning + skiltbilde side om side fra 700px), som nå er forenklet til én kolonne siden skiltbildet er borte. Bildefilene (`images/skilt-kartheia-web.jpg` og originalen `images/Skilt kartheia.jpg`) er ikke slettet, kun tatt ut av siden, i tilfelle de får en annen bruk senere.
    - **Bildet av lokalene (`images/ofa-lokaler-web.jpg`) og «Vis i kart»-knappen lå tidligere i sidetoppen, flyttet til egen "Her finner du oss"-seksjon nederst på siden (2026-11-23)** – se punkt 7 under.
 2. "Hvem møter du?" – bilde av Anne Lene og Tonje (flyttet fra sidetoppen) + to profiltekster (Tonje, Anne Lene – samme overskriftsnivå og stil, `<h3>` uten egen klasse på begge) + lenke til kontaktsiden, i et topartsoppsett (`.bilde-tekst-grid`, ny klasse): bilde til venstre og tekst til høyre fra nettbrettbredde (≥700px), loddrett midtstilt (`align-items: center`) med `column-gap: 2rem`, stablet på mobil (uendret der: full bredde, `gap: 1.5rem`)
-3. "Hva gjør vi?" – Tekstkort (type 4)
+3. "Hva gjør vi?" – Tekstkort (type 4), fremhevet med grå bakgrunn (`.fremhevet-bakgrunn`/`.fremhevet-innhold`, 2026-11-23) – samme fremhevingsmønster som "Dette får dere som medlem" (for-laerebedrifter.html) og "Dette får du som lærling hos oss" (for-laerlinger.html), se ny regel under "Fremhevet bakgrunn" lenger ned
 4. "Vår historie" – Tekstseksjon (type 10), enkel liste med årstall i fet skrift (samme listestil som "Andre veier"/"Opplæringsløp for voksne")
 5. "Styret" – Tekstseksjon (type 10), lenke til styreoversikt i Brønnøysundregisteret (ingen navn/personopplysninger skrevet på siden selv – kun utgående lenke til offentlig register, samme mønster som lenkene i "Vi samarbeider med")
 6. "Vi samarbeider med" – Tekstseksjon (type 10)
@@ -168,6 +168,19 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
   - vigo.no og Fagbrev.io (for-laerlinger.html).
   - GitHubs personvernerklæring (personvern.html).
   - Fremtidige lenker med `target="_blank"` skal følge samme mønster.
+
+## Fremhevet bakgrunn – `.fremhevet-bakgrunn`/`.fremhevet-innhold` (regel, delvis gjennomført)
+
+- **Regel (2026-11-23):** seksjoner med tekstbokser som har en vertikal terrakotta-linje til venstre (`.card` – Tekstkort, og `.kontaktboks` – Kontaktboks, begge `border-left: 3px solid var(--accent)`) skal fremheves likt med grå full-bredde bakgrunn (`.fremhevet-bakgrunn` på `<section>`, `.fremhevet-innhold` på en `<div>` rundt innholdet, se CSS-klassene – allerede i bruk på for-laerebedrifter.html og for-laerlinger.html).
+- **Gjennomført:**
+  - for-laerebedrifter.html: "Dette får dere som medlem" (allerede fra før).
+  - for-laerlinger.html: "Dette får du som lærling hos oss" (allerede fra før).
+  - om-ofa.html: "Hva gjør vi?" (2026-11-23, ny).
+- **Ikke avklart ennå – venter på brukers vurdering av omfang:** flere seksjoner på nettstedet har samme venstre-linje-stil, men er en annen seksjonstype (Personkort, Lenkekort) eller står tett inntil en annen seksjon på samme side. Kandidater, ikke gjennomført:
+  - for-laerebedrifter.html: "Lærlingtilskudd og andel til bedrift" (inneholder en `.kontaktboks`).
+  - for-laerlinger.html: "Kontakt oss" (inneholder både Personkort-kort og en `.kontaktboks` i samme seksjon).
+  - kontakt.html: "Kontaktpersoner" (Personkort) og "Sentralbord og e-post" (Kontaktboks) – ville gitt to tilstøtende grå bokser rett etter hverandre dersom begge fremheves.
+  - index.html: "Våre tjenester" (Lenkekort – gjenbruker i dag samme `.card`-klasse som Tekstkort, se uløst punkt i "Beslutninger lagt til grunn" om eget navn på lenkekort-varianten).
 
 ## Plassholder- og SJEKK-konvensjon (gjelder alle sider)
 
