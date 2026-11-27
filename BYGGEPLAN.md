@@ -33,12 +33,12 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 
 ### 4. for-laerebedrifter.html
 **Sidenavn endret 2026-11-27:** vises nå som «For bedrifter» i meny, bunntekst, `<title>` og `<h1>` på alle 8 sider (var «For lærebedrifter»). Filnavnet `for-laerebedrifter.html` er bevisst uendret. Alle lenketekster som viser til siden er oppdatert tilsvarende (bl.a. kryss-lenken på for-laerlinger.html).
-1. H1 + intro – Sidetopp – underside (type 2) + Snarveier (type 7)
-2. "Bli lærebedrift" – Tidslinje (type 8), i fag-seksjon-ramme
-3. "Dere har lærling hos oss" – Tekstkort (type 4), i fag-seksjon-ramme
-4. "Andre muligheter" – Tekstseksjon (type 10), i fag-seksjon-ramme
-5. "Hva koster det?" – Tekstseksjon (type 10) + Kontaktboks (type 9)
-6. Avsluttende kryss-lenke (til for-laerlinger.html) – Tekstseksjon (type 10)
+1. H1 "For bedrifter" + intro + Snarveier (type 7, 4 knapper: Bli lærebedrift, Dette får dere som medlem, Lærlingtilskudd og andel til bedrift, Opplæringsløp for voksne) – Sidetopp – underside (type 2)
+2. "Bli lærebedrift" – Tidslinje (type 8, 6 steg: Kontakt OFA, Søk godkjenning, Innføringskurs for faglig leder, Opplæringsplan, Finn lærling, Lærekontrakt), i fag-seksjon-ramme
+3. "Dette får dere som medlem" – Tekstkort (type 4, 5 bokser: Trygghet, Kvalitet i opplæringen, Svar på faglige spørsmål, Kurs for faglige ledere og instruktører, Teoridager og kurs for lærlingene), fremhevet med grå bakgrunn (`.fremhevet-bakgrunn`/`.fremhevet-innhold`), i fag-seksjon-ramme
+4. "Lærlingtilskudd og andel til bedrift" – Tekstseksjon (type 10) – **ikke** i fag-seksjon-ramme (ingen `.fag-section`-klasse på denne seksjonen)
+5. "Opplæringsløp for voksne" – Tekstseksjon (type 10, liste med tre punkter), i fag-seksjon-ramme
+6. "Kontakt oss" – Kontaktboks (type 9), egen avsluttende seksjon uten fag-seksjon-ramme. Det finnes ingen kryss-lenke til for-laerlinger.html på denne siden (motsatt vei – for-laerlinger.html har en kryss-lenke hit, se punkt 6 der).
 
 ### 5. for-laerlinger.html
 1. H1 + intro – Sidetopp – underside (type 2) + Snarveier (type 7, rekkefølge: Jeg vil bli lærling, Jeg er voksen eller har fagbrev fra før, Dette får du som lærling hos oss – oppdatert 2026-11-23 for å følge ny seksjonsrekkefølge)
@@ -65,7 +65,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 2. Behandlingsansvarlig – Tekstseksjon (type 10)
 3. E-post og telefon – Tekstseksjon (type 10)
 4. Informasjonskapsler, statistikk og logger – Tekstseksjon (type 10)
-5. Sosiale medier (nytt avsnitt) – Tekstseksjon (type 10)
+5. Sosiale medier (nytt avsnitt) – Tekstseksjon (type 10) – **ikke bygget ennå**, kun planlagt (se "Footer – sosiale medier" og "Forslag til rekkefølge", punkt 6). Siden har i dag kun 7 seksjoner, ikke 8.
 6. Dine rettigheter – Tekstseksjon (type 10)
 7. Lærlinger og lærebedrifter – Tekstseksjon (type 10)
 8. Sist oppdatert – Tekstseksjon (type 10)
@@ -97,8 +97,8 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - CSS-regelen `.sidetopp` er foreløpig tom (ingen visuell endring nå) – reservert for avstands-/skriftstørrelsesskalaen i punkt 5.
 - **To sider krevde reell oppdeling av `<section>`**, ikke bare et klassenavn, siden sidetopp-innholdet lå sammen med neste seksjon i samme tag:
   - **om-ofa.html**: H1+bilde+bildetekst skilt ut fra "OFA – Opplæringskontor..."-avsnittet (nå egen tekstseksjon).
-  - **kontakt.html**: H1 skilt ut fra "Kontaktpersoner"-personkortene (nå egen seksjon), og fikk en ny plassholder-ingress: `[Plassholder: Kort setning om hvordan man tar kontakt]`.
-  - **Synlig avstandsendring som følge av oppdelingen (målt, ikke rettet nå – tas i punkt 5):** på om-ofa.html økte gapet mellom bildeteksten og "OFA – Opplæringskontor..."-overskriften fra ca. 20px til 40px. På kontakt.html er gapet mellom den nye plassholder-ingressen og "Kontaktpersoner"-overskriften tilsvarende 40px (mot et direkte H1→H2-gap på ca. 21px før oppdelingen, som nå i tillegg har fått en synlig tekstlinje mellom seg).
+  - **kontakt.html**: H1 skilt ut fra "Kontaktpersoner"-personkortene (nå egen seksjon). Fikk først en plassholder-ingress (`[Plassholder: Kort setning om hvordan man tar kontakt]`), som senere er erstattet med ekte tekst: «Lurer du på noe om læreplass, opplæring eller medlemskap? Ring den av oss som kan hjelpe deg, eller send en e-post.»
+  - **Synlig avstandsendring som følge av oppdelingen (målt, ikke rettet nå – tas i punkt 5):** på om-ofa.html økte gapet mellom bildeteksten og "OFA – Opplæringskontor..."-overskriften fra ca. 20px til 40px. På kontakt.html er gapet mellom ingressen og "Kontaktpersoner"-overskriften tilsvarende 40px (mot et direkte H1→H2-gap på ca. 21px før oppdelingen, som nå i tillegg har fått en synlig tekstlinje mellom seg).
 
 ### 3. Fag-seksjon (`.fag-section`)
 - Brukes: fagene-vare, for-laerebedrifter, for-laerlinger.
