@@ -32,6 +32,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 6. Avsluttende lenker (til lærling-siden/kontakt) – Tekstseksjon (type 10)
 
 ### 4. for-laerebedrifter.html
+**Sidenavn endret 2026-11-27:** vises nå som «For bedrifter» i meny, bunntekst, `<title>` og `<h1>` på alle 8 sider (var «For lærebedrifter»). Filnavnet `for-laerebedrifter.html` er bevisst uendret. Alle lenketekster som viser til siden er oppdatert tilsvarende (bl.a. kryss-lenken på for-laerlinger.html).
 1. H1 + intro – Sidetopp – underside (type 2) + Snarveier (type 7)
 2. "Bli lærebedrift" – Tidslinje (type 8), i fag-seksjon-ramme
 3. "Dere har lærling hos oss" – Tekstkort (type 4), i fag-seksjon-ramme
