@@ -35,7 +35,7 @@ Dette er byggeplanen for struktur på OFA-nettsiden. Den er fasiten: endringer i
 **Sidenavn endret 2026-11-27:** vises nå som «For bedrifter» i meny, bunntekst, `<title>` og `<h1>` på alle 8 sider (var «For lærebedrifter»). Filnavnet `for-laerebedrifter.html` er bevisst uendret. Alle lenketekster som viser til siden er oppdatert tilsvarende (bl.a. kryss-lenken på for-laerlinger.html).
 1. H1 "For bedrifter" + intro + Snarveier (type 7, 4 knapper: Bli lærebedrift, Dette får dere som medlem, Lærlingtilskudd og andel til bedrift, Opplæringsløp for voksne) – Sidetopp – underside (type 2)
 2. "Bli lærebedrift" – Tidslinje (type 8, 6 steg: Kontakt OFA, Søk godkjenning, Innføringskurs for faglig leder, Opplæringsplan, Finn lærling, Lærekontrakt), i fag-seksjon-ramme
-3. "Dette får dere som medlem" – Tekstkort (type 4, 5 bokser: Trygghet, Kvalitet i opplæringen, Faglig støtte og vurdering, Kurs for faglige ledere og instruktører, Teoridager og kurs for lærlingene), fremhevet med grå bakgrunn (`.fremhevet-bakgrunn`/`.fremhevet-innhold`), i fag-seksjon-ramme
+3. "Dette får dere som medlem" – Tekstkort (type 4, 6 bokser: Trygghet, Kvalitet i opplæringen, Faglig støtte og vurdering, Modulprøver med ekstern sensor – frisørfaget, Kurs for faglige ledere og instruktører, Teoridager og kurs for lærlingene), fremhevet med grå bakgrunn (`.fremhevet-bakgrunn`/`.fremhevet-innhold`), i fag-seksjon-ramme
 4. "Lærlingtilskudd og andel til bedrift" – Tekstseksjon (type 10) – **ikke** i fag-seksjon-ramme (ingen `.fag-section`-klasse på denne seksjonen)
 5. "Opplæringsløp for voksne" – Tekstseksjon (type 10, liste med tre punkter), i fag-seksjon-ramme
 6. "Kontakt oss" – Kontaktboks (type 9), egen avsluttende seksjon uten fag-seksjon-ramme. Det finnes ingen kryss-lenke til for-laerlinger.html på denne siden (motsatt vei – for-laerlinger.html har en kryss-lenke hit, se punkt 6 der).
@@ -109,6 +109,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 ### 4. Tekstkort (navngitt `.card-grid`/`.card`-variant)
 - Brukes: om-ofa ("Hva gjør vi?"), for-laerebedrifter, for-laerlinger, aktuelt (tas med nå).
 - Endring: ingen markup-endring nødvendig. Gi varianten et offisielt navn i kodekommentar/dokumentasjon slik at den ikke blandes sammen med lenkekort eller personkort senere.
+- **Maks 3 kolonner (regel, se CLAUDE.md, 2026-11-27):** `.card-grid` brukte `grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))`, som ga 4 kolonner på stor skjerm (≥ ca. 1150px) innenfor `--max-width` (1100px). Med et antall bokser som ikke er delelig med 4 (f.eks. 6, eller 5), ga dette en synlig ujevn siste rad med tomrom til høyre. Endret til `minmax(250px, 1fr)`, som gir maks 3 kolonner ved full `--max-width`. Gjelder alle boksgrupper på nettstedet (index.html, om-ofa.html, fagene-vare.html er ikke berørt – ingen card-grid der, for-laerebedrifter.html, for-laerlinger.html, kontakt.html). Løser ikke all ujevnhet (5 bokser blir fortsatt 3+2, ikke 100 % jevnt), men unngår 4+1/4+2-mønsteret og er konsekvent på tvers av sidene.
 
 ### 5. Lenkekort
 - Brukes: kun index.html (3 kort med "Les mer →").
