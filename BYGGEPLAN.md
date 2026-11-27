@@ -150,13 +150,14 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 
 ## Footer – sosiale medier (gjennomført, tekstlenker)
 
-- Footeren på alle 8 sider har fått lenker til OFAs Facebook- og Instagram-konto, i Kontakt-spalten rett under org.nr.-linjen: `https://www.facebook.com/frisoragder` og `https://www.instagram.com/ofagder/` (bekreftet av bruker 2026-11-27, ingen SJEKK-merking).
-- **Tekstlenker, ikke ikoner:** vanlige tekstlenker («Facebook», «Instagram»), samme lenkestil som resten av Kontakt-spalten (`.footer-col a`, ingen ny CSS-klasse trengtes) – ingen knapper eller logoer. Se eget unntak fra knappestil-regelen i CLAUDE.md under Design.
+- Footeren på alle 8 sider har fått lenker til OFAs Facebook- og Instagram-konto, i logo-spalten (venstre spalte) rett under ingressen «Vi følger opp lærlinger...»: `https://www.facebook.com/frisoragder` og `https://www.instagram.com/ofagder/` (bekreftet av bruker 2026-11-27, ingen SJEKK-merking).
+- **Én linje, tekstlenker, ikke ikoner:** «Følg oss på Facebook og Instagram», der «Facebook» og «Instagram» er lenkene (samme lenkestil som resten av footeren, `.footer-col a` – ingen ny CSS-klasse trengtes). Lå først som to egne linjer i Kontakt-spalten, flyttet til logo-spalten og slått sammen til én linje 2026-11-27, etter ønske fra bruker.
 - **Hvorfor tekstlenker i stedet for logoer:** Metas offisielle brand-portal (meta.com/brand/resources) tillater ikke at Facebook-logoen omfarges eller forenkles til nettsidens egen palett ("DON'T change the color of the logo", "DON'T use just the 'f' from our logo"), og nedlasting av logopakkene krever at noen eksplisitt godtar Metas vilkår for merkevarebruk. Bruker valgte derfor rene tekstlenker i stedet for både offisielle logoer og selvtegnede ikoner.
 - Ingen innebygd innhold fra Facebook/Instagram – kun utgående lenker, ingen embeds/widgets.
-- Hver lenke har skjult tekst for skjermlesere rett før `</a>` (`<span class="visually-hidden"> (åpnes i ny fane)</span>`), samme mønster som andre `target="_blank"`-lenker på nettstedet.
+- Lenkene har skjult tekst for skjermlesere rett før hver `</a>` (`<span class="visually-hidden"> (åpnes i ny fane)</span>`), samme mønster som andre `target="_blank"`-lenker på nettstedet.
 - **personvern.html** skal få et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5) – tekstforslag er lagt fram for bruker til godkjenning, men ikke lagt inn i koden ennå.
 - Footerens kontaktspalte ("Kontakt") har fra før en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
+- **Telefonnummeret i Kontakt-spalten (gjennomført, 2026-11-27):** er nå en klikkbar `tel:+4793490216`-lenke på alle 8 sider, samme format som i `.kontaktboks` og personkortene (se "Kontaktboks", type 9). Tidligere ren tekst.
 
 ## Knapper og eksterne lenker (gjennomført, gjelder alle sider)
 
