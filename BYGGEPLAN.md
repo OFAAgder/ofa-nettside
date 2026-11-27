@@ -148,15 +148,15 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - **Mobil:** trinnene stables under hverandre, og pilene snur til å peke nedover. Kategorietikett-raden skjules på mobil (`display: none` under 700px), siden den todelte kolonne-spennet ("Skole" over to trinn) ikke har noen naturlig oversettelse til ett enkelt, stablet kolonne – trinnenes egne etiketter/titler ("Vg1", "Vg2", "Læretid") bærer fortsatt den informasjonen alene. Si fra dersom kategorietikettene bør vises på mobil på en annen måte (f.eks. gjentatt per trinn).
 - **Tilgjengelighet:** selve rekkefølgen leses som en ordnet liste (`<ol role="list">`, samme `role="list"`-mønster som resten av `<main>` pga. den kjente Safari/VoiceOver-list-style:none-bugen). Pilene er bygget som rene CSS-trekanter uten noe `content`-tekst, så de finnes ikke i tilgjengelighetstreet i det hele tatt – ikke bare visuelt skjult, men fysisk fraværende for skjermlesere.
 
-## Footer – sosiale medier (nytt)
+## Footer – sosiale medier (gjennomført, tekstlenker)
 
-- Footeren på alle 8 sider skal få lenker til OFAs Instagram- og Facebook-konto.
-- Ingen innebygd innhold fra Instagram/Facebook – kun utgående lenker, ingen embeds/widgets.
-- Ikonene lagres lokalt som SVG i prosjektmappen; ingen ressurser lastes fra Meta.
-- Hver lenke skal ha synlig tekst eller `aria-label` (f.eks. "OFA på Instagram").
-- Selve lenke-adressene markeres med `<!-- SJEKK -->` inntil de er bekreftet av bruker.
-- Personvern.html får et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5, og "Aktuelt-siden" for sammenhengen): det skal stå at nettsiden lenker til OFAs kontoer på Instagram og Facebook, at ingen opplysninger sendes dit før besøkeren selv klikker, og at Metas vilkår gjelder der.
-- Footerens kontaktspalte ("Kontakt") har i tillegg fått en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
+- Footeren på alle 8 sider har fått lenker til OFAs Facebook- og Instagram-konto, i Kontakt-spalten rett under org.nr.-linjen: `https://www.facebook.com/frisoragder` og `https://www.instagram.com/ofagder/` (bekreftet av bruker 2026-11-27, ingen SJEKK-merking).
+- **Tekstlenker, ikke ikoner:** vanlige tekstlenker («Facebook», «Instagram»), samme lenkestil som resten av Kontakt-spalten (`.footer-col a`, ingen ny CSS-klasse trengtes) – ingen knapper eller logoer. Se eget unntak fra knappestil-regelen i CLAUDE.md under Design.
+- **Hvorfor tekstlenker i stedet for logoer:** Metas offisielle brand-portal (meta.com/brand/resources) tillater ikke at Facebook-logoen omfarges eller forenkles til nettsidens egen palett ("DON'T change the color of the logo", "DON'T use just the 'f' from our logo"), og nedlasting av logopakkene krever at noen eksplisitt godtar Metas vilkår for merkevarebruk. Bruker valgte derfor rene tekstlenker i stedet for både offisielle logoer og selvtegnede ikoner.
+- Ingen innebygd innhold fra Facebook/Instagram – kun utgående lenker, ingen embeds/widgets.
+- Hver lenke har skjult tekst for skjermlesere rett før `</a>` (`<span class="visually-hidden"> (åpnes i ny fane)</span>`), samme mønster som andre `target="_blank"`-lenker på nettstedet.
+- **personvern.html** skal få et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5) – tekstforslag er lagt fram for bruker til godkjenning, men ikke lagt inn i koden ennå.
+- Footerens kontaktspalte ("Kontakt") har fra før en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
 
 ## Knapper og eksterne lenker (gjennomført, gjelder alle sider)
 
@@ -259,7 +259,7 @@ Full gjennomgang av alle farge-/bakgrunnskombinasjoner i style.css (regnet ut WC
 4. Kontaktboks på kontakt.html.
 5. Felles skala for avstander og skriftstørrelser: egne CSS-variabler for avstander (f.eks. `--space-xs/sm/md/lg/xl`) og for skriftstørrelser (h1, h2, h3, brødtekst, små tekster), brukt av `.snarveier`, `.tidslinje`, `.tidslinje ul`, `.card-grid`, `.kontaktboks`, `.footer-inner` og overskrifter/tekst generelt i stedet for frittstående rem-verdier.
    - Når vi kommer hit: bruker gir en liste over hva som ikke er bra med dagens avstander/skriftstørrelser. Basert på den listen foreslås konkrete skalaverdier, forslaget vises, og det ventes på godkjenning før noe endres.
-6. Footer: sosiale medier-ikoner/lenker (alle 8 sider) + nytt avsnitt i personvern.html.
+6. Footer: sosiale medier-tekstlenker (alle 8 sider, gjennomført) + nytt avsnitt i personvern.html (forslag lagt fram, ikke lagt inn ennå).
 7. Plassholder/SJEKK-opprydding (aktuelt.html, personvern.html, kontakt.html, footer).
 8. Teknisk rydding (dødt CSS, skriftvekt i tidslinje, navn på `.fag-section`).
 9. WebP-konvertering.

@@ -22,6 +22,7 @@
 - Sideoppbygning: hovedoverskrift, innledning, snarveiknapper (hvis siden har dem), og deretter innholdet.
 - Bildetekster (både fotokreditering og beskrivende bildetekster) bruker samme stil, `.photo-credit` i stilarket, slik at alle bildetekster på nettstedet ser like ut.
 - Knappestiler: fylte terrakottaknapper (`.btn`) brukes til snarveier internt på siden (f.eks. hopp til en seksjon). Kantknapper (`.btn-ghost`) brukes til lenker som går ut av nettstedet, for eksempel kart.
+- Unntak fra knappestilene: lenkene til sosiale medier i bunnteksten (Facebook, Instagram) er vanlige tekstlenker i Kontakt-spalten, i samme stil som de andre lenkene der – ingen knapperamme eller ikoner.
 
 ## Tilgjengelighet (WCAG 2.1, nivå AA)
 
