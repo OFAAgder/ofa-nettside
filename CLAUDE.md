@@ -8,6 +8,7 @@
 - Alle sider bygges av de faste seksjonstypene i BYGGEPLAN.md. Ikke lag nye varianter uten å spørre.
 - Før større endringer: legg fram en plan og vent på godkjenning.
 - Etter hver godkjent endring: lag en git-commit med kort beskrivelse på norsk.
+- Ikke kjør `git push` før bruker har gitt eksplisitt godkjenning for akkurat den endringen – en tidligere godkjenning gjelder ikke automatisk for nye endringer.
 - Sjekk alltid mobilvisning først.
 - Personvern: ingen tredjepartsinnhold eller ekstern sporing. Ingen CDN-er, eksterne fonter, eksterne skript, skjemaer eller innebygd innhold fra tredjeparter (f.eks. Instagram, YouTube, kart). Lenk til slike tjenester i stedet. Kontakt skjer via mailto.
 - Sosiale medier: kun lenker, aldri innebygd innhold. Ikoner lagres lokalt.

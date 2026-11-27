@@ -65,7 +65,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 2. Behandlingsansvarlig – Tekstseksjon (type 10)
 3. E-post og telefon – Tekstseksjon (type 10)
 4. Informasjonskapsler, statistikk og logger – Tekstseksjon (type 10)
-5. Sosiale medier (nytt avsnitt) – Tekstseksjon (type 10) – **ikke bygget ennå**, kun planlagt (se "Footer – sosiale medier" og "Forslag til rekkefølge", punkt 6). Siden har i dag kun 7 seksjoner, ikke 8.
+5. Sosiale medier (gjennomført 2026-11-27) – Tekstseksjon (type 10), mellom "Informasjonskapsler, statistikk og logger" og "Dine rettigheter": lenker til Facebook/Instagram uten innebygd innhold/sporing, lenke til Metas personvernerklæring (`target="_blank"`, skjult "(åpnes i ny fane)"-tekst), og at OFA er felles behandlingsansvarlig med Meta for besøksstatistikk på sidene.
 6. Dine rettigheter – Tekstseksjon (type 10)
 7. Lærlinger og lærebedrifter – Tekstseksjon (type 10)
 8. Sist oppdatert – Tekstseksjon (type 10)
@@ -155,7 +155,7 @@ Ligger ikke i `main` lenger – se "Aktuelt-siden" og "Lansering" for mekanikken
 - **Hvorfor tekstlenker i stedet for logoer:** Metas offisielle brand-portal (meta.com/brand/resources) tillater ikke at Facebook-logoen omfarges eller forenkles til nettsidens egen palett ("DON'T change the color of the logo", "DON'T use just the 'f' from our logo"), og nedlasting av logopakkene krever at noen eksplisitt godtar Metas vilkår for merkevarebruk. Bruker valgte derfor rene tekstlenker i stedet for både offisielle logoer og selvtegnede ikoner.
 - Ingen innebygd innhold fra Facebook/Instagram – kun utgående lenker, ingen embeds/widgets.
 - Lenkene har skjult tekst for skjermlesere rett før hver `</a>` (`<span class="visually-hidden"> (åpnes i ny fane)</span>`), samme mønster som andre `target="_blank"`-lenker på nettstedet.
-- **personvern.html** skal få et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5) – tekstforslag er lagt fram for bruker til godkjenning, men ikke lagt inn i koden ennå.
+- **personvern.html** har fått et tilhørende avsnitt (se "Sider" → personvern.html, punkt 5), gjennomført 2026-11-27.
 - Footerens kontaktspalte ("Kontakt") har fra før en linje med org.nr. (983 572 073) på alle 8 sider, rett under e-postadressen. Bekreftet av bruker, ingen SJEKK-merking.
 - **Telefonnummeret i Kontakt-spalten (gjennomført, 2026-11-27):** er nå en klikkbar `tel:+4793490216`-lenke på alle 8 sider, samme format som i `.kontaktboks` og personkortene (se "Kontaktboks", type 9). Tidligere ren tekst.
 
@@ -260,7 +260,7 @@ Full gjennomgang av alle farge-/bakgrunnskombinasjoner i style.css (regnet ut WC
 4. Kontaktboks på kontakt.html.
 5. Felles skala for avstander og skriftstørrelser: egne CSS-variabler for avstander (f.eks. `--space-xs/sm/md/lg/xl`) og for skriftstørrelser (h1, h2, h3, brødtekst, små tekster), brukt av `.snarveier`, `.tidslinje`, `.tidslinje ul`, `.card-grid`, `.kontaktboks`, `.footer-inner` og overskrifter/tekst generelt i stedet for frittstående rem-verdier.
    - Når vi kommer hit: bruker gir en liste over hva som ikke er bra med dagens avstander/skriftstørrelser. Basert på den listen foreslås konkrete skalaverdier, forslaget vises, og det ventes på godkjenning før noe endres.
-6. Footer: sosiale medier-tekstlenker (alle 8 sider, gjennomført) + nytt avsnitt i personvern.html (forslag lagt fram, ikke lagt inn ennå).
+6. Footer: sosiale medier-tekstlenker (alle 8 sider, gjennomført) + nytt avsnitt i personvern.html (gjennomført).
 7. Plassholder/SJEKK-opprydding (aktuelt.html, personvern.html, kontakt.html, footer).
 8. Teknisk rydding (dødt CSS, skriftvekt i tidslinje, navn på `.fag-section`).
 9. WebP-konvertering.
